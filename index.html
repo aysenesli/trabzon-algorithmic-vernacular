@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Algorithmic Vernacular: An Explainable Evidence Interface for Trabzon Houses</title>
+  <script src="data/ascaad26-evidence-data.js"></script>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="src/app.js" defer></script>
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════════════
+       HEADER — persistent disclosure always visible
+  ════════════════════════════════════════════════ -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <div class="header-title-group">
+        <h1 class="site-title">Algorithmic Vernacular</h1>
+        <span class="version-chip" aria-label="Version">v1.0.0 · Validated Full-Data Build</span>
+      </div>
+      <p class="persistent-disclosure" id="persistent-disclosure">
+        This interface reports descriptive inventory evidence and visualization inputs.
+        It does not evaluate architectural correctness, compatibility, authenticity, or design quality.
+      </p>
+    </div>
+  </header>
+
+  <!-- ════════════════════════════════════════════════
+       TAB NAVIGATION
+  ════════════════════════════════════════════════ -->
+  <nav class="tab-nav" aria-label="Application views">
+    <div class="tab-list" role="tablist" aria-label="Views">
+      <button class="tab-btn tab-btn--active"
+              role="tab"
+              id="tab-design"
+              aria-selected="true"
+              aria-controls="panel-design">
+        Design Explorer
+      </button>
+      <button class="tab-btn"
+              role="tab"
+              id="tab-evidence"
+              aria-selected="false"
+              aria-controls="panel-evidence"
+              tabindex="-1">
+        Evidence Explorer
+      </button>
+      <button class="tab-btn"
+              role="tab"
+              id="tab-method"
+              aria-selected="false"
+              aria-controls="panel-method"
+              tabindex="-1">
+        Method &amp; Limits
+      </button>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════════════════
+       MAIN CONTENT
+  ════════════════════════════════════════════════ -->
+  <main class="main-content" id="main-content">
+
+    <!-- ── INTEGRITY ERROR STATE (hidden unless checks fail) ── -->
+    <div id="integrity-error" class="integrity-error" hidden role="alert" aria-live="assertive">
+      <h2>Data Integrity Check Failed</h2>
+      <p>The evidence data file did not pass startup validation. The interface cannot be used until these issues are resolved.</p>
+      <ul id="integrity-error-list"></ul>
+    </div>
+
+    <!-- ══════════════════════════════════════════════
+         VIEW 1 — DESIGN EXPLORER
+    ══════════════════════════════════════════════ -->
+    <section id="panel-design"
+             class="view-panel view-panel--active"
+             role="tabpanel"
+             aria-labelledby="tab-design">
+
+      <h2 class="sr-only">Design Explorer</h2>
+
+      <div class="design-layout">
+
+        <!-- LEFT COLUMN — Parameter controls -->
+        <aside class="param-column" aria-label="Parameter controls">
+
+          <!-- Dataset scope summary -->
+          <div class="scope-summary" id="scope-summary">
+            <h3 class="column-heading">Dataset Scope</h3>
+            <div class="scope-grid" id="scope-grid">
+              <!-- Populated by JS -->
+            </div>
+            <p class="scope-note" id="scope-note">
+              The source inventory assigns 265 codes to residential buildings.
+              Two codes refer to the same physical building; therefore the
+              independent candidate set contains 264 records.
+            </p>
+          </div>
+
+          <!-- Descriptive evidence controls -->
+          <fieldset class="control-group" id="descriptive-controls">
+            <legend class="control-group-legend">
+              <span class="evidence-chip evidence-chip--descriptive" aria-label="Evidence class">Descriptive Evidence</span>
+              Parameters with validated frequency distributions
+            </legend>
+
+            <!-- P1 — Visible floor count -->
+            <div class="param-block" id="p1-block">
+              <div class="param-header">
+                <label class="param-label" for="p1-input">
+                  P1 — Visible Floor Count
+                </label>
+                <span class="evidence-badge evidence-badge--descriptive">Descriptive</span>
+              </div>
+              <div class="param-input-row">
+                <input type="number"
+                       id="p1-input"
+                       name="p1"
+                       min="1"
+                       max="5"
+                       step="1"
+                       value="3"
+                       aria-describedby="p1-help p1-trace-container"
+                       class="param-input param-input--integer">
+                <span class="param-unit">floors</span>
+              </div>
+              <p class="param-help" id="p1-help">Integer values 1–5 only. Reports frequency of observed floor counts in the 183 analysis records.</p>
+              <div class="evidence-trace" id="p1-trace-container" aria-live="polite" aria-atomic="true">
+                <!-- Updated by JS -->
+              </div>
+            </div>
+
+            <!-- P8 — Facade/construction material category -->
+            <div class="param-block" id="p8-block">
+              <div class="param-header">
+                <label class="param-label" for="p8-select">
+                  P8 — Facade / Construction Material Category
+                </label>
+                <span class="evidence-badge evidence-badge--descriptive">Descriptive</span>
+              </div>
+              <select id="p8-select"
+                      name="p8"
+                      aria-describedby="p8-help p8-trace-container"
+                      class="param-select">
+                <!-- Options populated by JS in defined display order -->
+              </select>
+              <p class="param-help" id="p8-help">Categorical frequency across all 183 analysis records. Selection changes the schematic facade palette only.</p>
+              <div class="evidence-trace" id="p8-trace-container" aria-live="polite" aria-atomic="true">
+                <!-- Updated by JS -->
+              </div>
+            </div>
+
+          </fieldset>
+
+          <!-- Limited evidence control -->
+          <fieldset class="control-group" id="limited-controls">
+            <legend class="control-group-legend">
+              <span class="evidence-chip evidence-chip--limited" aria-label="Evidence class">Limited Record-Level Evidence</span>
+              Parameter with low and area-imbalanced observability
+            </legend>
+
+            <!-- P9 — Roof material -->
+            <div class="param-block" id="p9-block">
+              <div class="param-header">
+                <label class="param-label" for="p9-select">
+                  P9 — Roof Material
+                </label>
+                <span class="evidence-badge evidence-badge--limited">Limited</span>
+              </div>
+              <select id="p9-select"
+                      name="p9"
+                      aria-describedby="p9-help p9-warning"
+                      class="param-select">
+                <option value="">Unknown / Unavailable</option>
+                <option value="tile (type unspecified)">Tile (type unspecified)</option>
+                <option value="metal sheet/mixed repair">Metal sheet / Mixed repair</option>
+              </select>
+              <p class="param-help" id="p9-help">Observed in 53 of 183 records (29.0%); 130 records unavailable. Changes roof hatch/fill only.</p>
+              <p class="param-warning" id="p9-warning" role="note">
+                <span class="warning-icon" aria-hidden="true">⚠</span>
+                Coverage is uneven across areas and must not be generalised to the full population.
+              </p>
+            </div>
+
+          </fieldset>
+
+          <!-- Visualization-only controls -->
+          <fieldset class="control-group" id="vis-controls">
+            <legend class="control-group-legend">
+              <span class="evidence-chip evidence-chip--vis" aria-label="Evidence class">Visualization-Only</span>
+              No validated building-level inventory measurement
+            </legend>
+
+            <p class="vis-note" id="vis-global-note">
+              These are technical rendering constraints only. They must not be
+              interpreted as inventory-derived ranges, empirical baselines, expected
+              values, or recommendations.
+            </p>
+
+            <!-- P2 -->
+            <div class="param-block param-block--vis">
+              <label class="param-label" for="p2-input">P2 — Building Width</label>
+              <div class="param-input-row">
+                <input type="number" id="p2-input" name="p2"
+                       min="5.0" max="16.0" step="0.5" value="9.5"
+                       aria-describedby="vis-global-note" class="param-input">
+                <span class="param-unit">m</span>
+              </div>
+            </div>
+
+            <!-- P3 -->
+            <div class="param-block param-block--vis">
+              <label class="param-label" for="p3-input">P3 — Building Depth</label>
+              <div class="param-input-row">
+                <input type="number" id="p3-input" name="p3"
+                       min="5.0" max="16.0" step="0.5" value="8.0"
+                       aria-describedby="vis-global-note" class="param-input">
+                <span class="param-unit">m</span>
+              </div>
+            </div>
+
+            <!-- P4 -->
+            <div class="param-block param-block--vis">
+              <label class="param-label" for="p4-input">P4 — Window-to-Wall Ratio</label>
+              <div class="param-input-row">
+                <input type="number" id="p4-input" name="p4"
+                       min="0.05" max="0.45" step="0.01" value="0.20"
+                       aria-describedby="vis-global-note" class="param-input">
+                <span class="param-unit">ratio</span>
+              </div>
+            </div>
+
+            <!-- P5 -->
+            <div class="param-block param-block--vis">
+              <label class="param-label" for="p5-input">P5 — Roof Slope</label>
+              <div class="param-input-row">
+                <input type="number" id="p5-input" name="p5"
+                       min="15" max="65" step="1" value="38"
+                       aria-describedby="vis-global-note" class="param-input">
+                <span class="param-unit">°</span>
+              </div>
+            </div>
+
+            <!-- P6 -->
+            <div class="param-block param-block--vis">
+              <label class="param-label" for="p6-input">P6 — Eave Depth</label>
+              <div class="param-input-row">
+                <input type="number" id="p6-input" name="p6"
+                       min="0.20" max="2.00" step="0.05" value="0.90"
+                       aria-describedby="vis-global-note" class="param-input">
+                <span class="param-unit">m</span>
+              </div>
+            </div>
+
+            <!-- P7 -->
+            <div class="param-block param-block--vis">
+              <label class="param-label" for="p7-input">P7 — Storey Height</label>
+              <div class="param-input-row">
+                <input type="number" id="p7-input" name="p7"
+                       min="2.20" max="4.00" step="0.10" value="3.00"
+                       aria-describedby="vis-global-note" class="param-input">
+                <span class="param-unit">m</span>
+              </div>
+            </div>
+
+            <!-- P10 -->
+            <div class="param-block param-block--vis">
+              <label class="param-label" for="p10-input">P10 — Balcony Depth</label>
+              <div class="param-input-row">
+                <input type="number" id="p10-input" name="p10"
+                       min="0.00" max="2.00" step="0.05" value="1.00"
+                       aria-describedby="vis-global-note" class="param-input">
+                <span class="param-unit">m</span>
+              </div>
+              <p class="param-help-small">Set to 0.00 to hide the balcony.</p>
+            </div>
+
+            <!-- P11 -->
+            <div class="param-block param-block--vis">
+              <label class="param-label" for="p11-input">P11 — Balcony Width Ratio</label>
+              <div class="param-input-row">
+                <input type="number" id="p11-input" name="p11"
+                       min="0.10" max="1.00" step="0.05" value="0.55"
+                       aria-describedby="vis-global-note" class="param-input">
+                <span class="param-unit">ratio of P2</span>
+              </div>
+            </div>
+
+            <!-- P12 -->
+            <div class="param-block param-block--vis">
+              <label class="param-label" for="p12-input">P12 — Wall Thickness</label>
+              <div class="param-input-row">
+                <input type="number" id="p12-input" name="p12"
+                       min="0.20" max="0.85" step="0.05" value="0.45"
+                       aria-describedby="vis-global-note" class="param-input">
+                <span class="param-unit">m</span>
+              </div>
+              <p class="param-help-small">Visible in Plan / Roof view.</p>
+            </div>
+
+            <!-- Reset button -->
+            <div class="reset-row">
+              <button type="button" id="reset-btn" class="btn btn--secondary">
+                Reset display values
+              </button>
+            </div>
+
+          </fieldset>
+        </aside>
+
+        <!-- CENTER COLUMN — Schematic model -->
+        <div class="viz-column">
+          <div class="viz-header">
+            <h3 class="column-heading">Schematic Model</h3>
+            <!-- Sub-view toggle -->
+            <div class="view-toggle" role="tablist" aria-label="Schematic view">
+              <button class="view-tab view-tab--active"
+                      role="tab"
+                      id="tab-elev"
+                      aria-selected="true"
+                      aria-controls="elev-panel">
+                Elevation
+              </button>
+              <button class="view-tab"
+                      role="tab"
+                      id="tab-plan"
+                      aria-selected="false"
+                      aria-controls="plan-panel"
+                      tabindex="-1">
+                Plan / Roof
+              </button>
+            </div>
+          </div>
+
+          <!-- Elevation panel -->
+          <div id="elev-panel" role="tabpanel" aria-labelledby="tab-elev" class="svg-panel">
+            <svg id="elevation-svg"
+                 viewBox="0 0 600 520"
+                 xmlns="http://www.w3.org/2000/svg"
+                 aria-labelledby="elev-svg-title"
+                 aria-describedby="elev-svg-desc"
+                 role="img"
+                 class="schematic-svg">
+              <title id="elev-svg-title">Schematic front elevation</title>
+              <desc id="elev-svg-desc">A schematic front elevation of a Trabzon residential building. Parameter values P1, P2, P4, P5, P6, P7, P8, P9, P10, and P11 affect the rendering.</desc>
+              <defs id="elev-defs"></defs>
+              <g id="elev-g" aria-hidden="true"></g>
+            </svg>
+          </div>
+
+          <!-- Plan panel (hidden initially) -->
+          <div id="plan-panel" role="tabpanel" aria-labelledby="tab-plan" class="svg-panel" hidden>
+            <svg id="plan-svg"
+                 viewBox="0 0 600 400"
+                 xmlns="http://www.w3.org/2000/svg"
+                 aria-labelledby="plan-svg-title"
+                 aria-describedby="plan-svg-desc"
+                 role="img"
+                 class="schematic-svg">
+              <title id="plan-svg-title">Schematic plan / roof view</title>
+              <desc id="plan-svg-desc">A schematic top-down plan of a Trabzon residential building showing footprint, wall thickness, and roof. Parameter values P2, P3, and P12 affect the rendering.</desc>
+              <defs id="plan-defs"></defs>
+              <g id="plan-g" aria-hidden="true"></g>
+            </svg>
+          </div>
+
+          <p class="schematic-disclaimer" id="schematic-disclaimer" aria-live="off">
+            Schematic model — not a measured reconstruction.
+          </p>
+        </div>
+
+        <!-- RIGHT COLUMN — Evidence trace and configuration summary -->
+        <aside class="evidence-column" aria-label="Evidence trace and configuration summary">
+
+          <h3 class="column-heading">Evidence Trace</h3>
+
+          <!-- P1 active trace -->
+          <div class="trace-card trace-card--descriptive" id="p1-right-trace">
+            <div class="trace-card-header">
+              <span class="trace-label">P1 — Floor Count</span>
+              <span class="evidence-badge evidence-badge--descriptive">Descriptive</span>
+            </div>
+            <div class="trace-card-body" id="p1-right-trace-body">
+              <!-- Updated by JS -->
+            </div>
+          </div>
+
+          <!-- P8 active trace -->
+          <div class="trace-card trace-card--descriptive" id="p8-right-trace">
+            <div class="trace-card-header">
+              <span class="trace-label">P8 — Facade Category</span>
+              <span class="evidence-badge evidence-badge--descriptive">Descriptive</span>
+            </div>
+            <div class="trace-card-body" id="p8-right-trace-body">
+              <!-- Updated by JS -->
+            </div>
+          </div>
+
+          <!-- P9 static limitation note -->
+          <div class="trace-card trace-card--limited" id="p9-right-trace">
+            <div class="trace-card-header">
+              <span class="trace-label">P9 — Roof Material</span>
+              <span class="evidence-badge evidence-badge--limited">Limited</span>
+            </div>
+            <div class="trace-card-body" id="p9-right-trace-body">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+
+          <h3 class="column-heading column-heading--spaced">Input Feedback &amp; Evidence Context</h3>
+
+          <div id="input-feedback"
+               class="input-feedback"
+               data-kind="evidence"
+               role="status"
+               aria-live="polite"
+               aria-atomic="true">
+            <div class="input-feedback__label" id="input-feedback-label">Descriptive context</div>
+            <p class="input-feedback__message" id="input-feedback-message">
+              Change a parameter to see technical input feedback and descriptive evidence context.
+            </p>
+            <p class="input-feedback__boundary">
+              No architectural suitability judgment or automatic design recommendation is generated.
+            </p>
+          </div>
+
+          <h3 class="column-heading column-heading--spaced">Configuration Summary</h3>
+
+          <div class="config-summary" id="config-summary">
+            <!-- Populated by JS -->
+          </div>
+
+          <div class="export-row">
+            <button type="button" id="export-json-btn" class="btn btn--primary btn--full">
+              Export configuration JSON
+            </button>
+          </div>
+
+        </aside>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════
+         VIEW 2 — EVIDENCE EXPLORER
+    ══════════════════════════════════════════════ -->
+    <section id="panel-evidence"
+             class="view-panel"
+             role="tabpanel"
+             aria-labelledby="tab-evidence"
+             hidden>
+
+      <div class="explorer-layout">
+
+        <div class="explorer-header">
+          <h2 class="view-title">Evidence Explorer</h2>
+          <div class="explorer-header-right">
+            <span class="record-count"
+                  id="record-count"
+                  role="status"
+                  aria-live="polite"
+                  aria-atomic="true">
+              Showing 183 of 183 analysis records
+            </span>
+            <button type="button" id="export-csv-btn" class="btn btn--secondary">
+              Export filtered CSV
+            </button>
+          </div>
+        </div>
+
+        <!-- Filter bar -->
+        <details class="filter-bar" id="filter-bar" open>
+          <summary class="filter-bar-toggle">
+            Filters <span id="active-filter-count" class="filter-count-badge" hidden></span>
+          </summary>
+          <div class="filter-grid" role="group" aria-label="Filter records">
+
+            <div class="filter-item">
+              <label class="filter-label" for="filter-text">Search</label>
+              <input type="search" id="filter-text" class="filter-input"
+                     placeholder="Record ID, area, code, raw text…"
+                     aria-label="Free text search across record ID, area, record code, and raw source fields">
+            </div>
+
+            <div class="filter-item">
+              <label class="filter-label" for="filter-area">Area</label>
+              <select id="filter-area" class="filter-select">
+                <option value="">All areas</option>
+              </select>
+            </div>
+
+            <div class="filter-item">
+              <label class="filter-label" for="filter-inclusion">Inclusion Status</label>
+              <select id="filter-inclusion" class="filter-select">
+                <option value="">All statuses</option>
+                <option value="included">Included</option>
+                <option value="partially included">Partially included</option>
+              </select>
+            </div>
+
+            <div class="filter-item">
+              <label class="filter-label" for="filter-p1">P1 Floor Count</label>
+              <select id="filter-p1" class="filter-select">
+                <option value="">All values</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="NA">Unavailable</option>
+              </select>
+            </div>
+
+            <div class="filter-item">
+              <label class="filter-label" for="filter-p8">P8 Material Category</label>
+              <select id="filter-p8" class="filter-select">
+                <option value="">All categories</option>
+                <!-- Populated by JS in display order -->
+              </select>
+            </div>
+
+            <div class="filter-item">
+              <label class="filter-label" for="filter-p9">P9 Roof Visibility</label>
+              <select id="filter-p9" class="filter-select">
+                <option value="">All records</option>
+                <option value="observable">Observable</option>
+                <option value="not observable">Not observable</option>
+              </select>
+            </div>
+
+            <div class="filter-item">
+              <label class="filter-label" for="filter-construction">Construction System</label>
+              <select id="filter-construction" class="filter-select">
+                <option value="">All systems</option>
+                <option value="masonry">Masonry</option>
+                <option value="other/unclear">Other / Unclear</option>
+              </select>
+            </div>
+
+            <div class="filter-item">
+              <label class="filter-label" for="filter-review">Review Status</label>
+              <select id="filter-review" class="filter-select">
+                <option value="">All records</option>
+                <option value="researcher validated">Researcher validated (30)</option>
+                <option value="researcher review required">Researcher review required (153)</option>
+              </select>
+            </div>
+
+            <div class="filter-item filter-item--actions">
+              <button type="button" id="clear-filters-btn" class="btn btn--secondary">
+                Clear all filters
+              </button>
+            </div>
+
+          </div>
+        </details>
+
+        <!-- P1 / P8 distribution panels (populated by JS) -->
+        <div id="explorer-distributions" class="explorer-distributions" aria-label="P1 and P8 frequency distributions">
+          <!-- Populated by buildExplorerDistributions() -->
+        </div>
+
+        <!-- Table container -->
+        <div class="table-wrapper" role="region" aria-label="Analysis records table" tabindex="0">
+          <table class="records-table" id="records-table" aria-label="Analysis records">
+            <thead>
+              <tr>
+                <th scope="col">Record ID</th>
+                <th scope="col">Area</th>
+                <th scope="col">PDF Page</th>
+                <th scope="col">Inclusion Status</th>
+                <th scope="col">P1</th>
+                <th scope="col">P8 Category</th>
+                <th scope="col">P9 Visibility / Material</th>
+                <th scope="col">Construction System</th>
+                <th scope="col">Review Status</th>
+                <th scope="col">Details</th>
+              </tr>
+            </thead>
+            <tbody id="records-tbody">
+              <!-- Populated by JS -->
+            </tbody>
+          </table>
+          <!-- No-results state -->
+          <div id="no-results" class="no-results" hidden role="status" aria-live="polite">
+            No records match the current filters. Use "Clear all filters" to restore all 183 records.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════
+         VIEW 3 — METHOD & LIMITS
+    ══════════════════════════════════════════════ -->
+    <section id="panel-method"
+             class="view-panel view-panel--method"
+             role="tabpanel"
+             aria-labelledby="tab-method"
+             hidden>
+
+      <div class="method-layout">
+        <h2 class="view-title">Method &amp; Limits</h2>
+        <div id="method-content" class="method-content">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ════════════════════════════════════════════════
+       RECORD DETAIL DIALOG
+  ════════════════════════════════════════════════ -->
+  <dialog id="record-detail"
+          class="record-dialog"
+          aria-modal="true"
+          aria-labelledby="detail-title">
+    <div class="detail-header">
+      <h2 id="detail-title" class="detail-title">Record Detail</h2>
+      <button type="button" id="detail-close-btn" class="detail-close-btn" aria-label="Close record detail">
+        <span aria-hidden="true">✕</span>
+      </button>
+    </div>
+    <div id="detail-content" class="detail-content">
+      <!-- Populated by JS -->
+    </div>
+  </dialog>
+
+  <!-- ════════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <p class="footer-attribution">
+      Source: <em>Trabzon Kent İçi Kültür Varlıkları Envanteri</em>
+      (Özen et al., 2010), pages 291–448.
+      Dataset version: 2026-08-12.
+    </p>
+  </footer>
+
+</body>
+</html>
