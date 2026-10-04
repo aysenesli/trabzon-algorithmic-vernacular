@@ -2,7 +2,7 @@
 
 /* ════════════════════════════════════════════════════════════════════════
    ALGORITHMIC VERNACULAR — TRABZON HOUSES
-   src/app.js · v1.0.0 · Validated Full-Data Build
+   src/app.js · v1.2.0 · Documented Cases Build
 
    Authoritative source order:
      1. 02_SCIENTIFIC_PRODUCT_SPEC_EN.md
@@ -1149,6 +1149,35 @@ function wireDesignExplorerEvents() {
   });
 }
 
+function wireDocumentedCases() {
+  document.querySelectorAll('.case-load').forEach(button => {
+    button.addEventListener('click', () => {
+      const p1 = Number(button.dataset.p1);
+      const p8 = button.dataset.p8;
+      const p9 = button.dataset.p9;
+
+      state.params.P1 = p1;
+      state.params.P8 = p8;
+      state.params.P9 = p9;
+      syncFormToState();
+      updateP1Trace();
+      updateP8Trace();
+      populateP9Trace();
+      updateConfigSummary();
+      scheduleSchematicUpdate();
+      setInputFeedback({
+        kind: 'evidence',
+        label: 'Documented record attributes loaded',
+        message: `Applied the coded P1, P8, and P9 attributes from the selected inventory record. P2–P7 and P10–P12 remain neutral visualization-only values and must not be interpreted as measurements of that building.`
+      });
+
+      const designTab = document.getElementById('tab-design');
+      if (designTab) designTab.click();
+      document.getElementById('p1-block')?.scrollIntoView({ block: 'start' });
+    });
+  });
+}
+
 /** Sync all form controls to current state.params */
 function syncFormToState() {
   const p = state.params;
@@ -1649,7 +1678,7 @@ function buildMethodContent() {
         <strong>Source PDF:</strong> ${meta.sourceFile}<br>
         <strong>Researcher confirmation date:</strong> ${val.date}
       </p>
-      <p>The interface, dataset, and methodology are described in: <em>Algorithmic Vernacular: An Explainable Evidence Interface for Trabzon Houses</em> (v1.0.0 – Validated Full-Data Build).</p>
+      <p>The interface, dataset, and methodology are described in: <em>From Inventory to Interface: A Provenance-Aware Representation of Trabzon Vernacular Houses</em> (v1.2.0 – Documented Cases Build).</p>
     </div>
   `;
 }
@@ -1807,6 +1836,7 @@ document.addEventListener('DOMContentLoaded', function init() {
   // 7. Wire all events
   setupMainTabs();
   wireDesignExplorerEvents();
+  wireDocumentedCases();
   wireExplorerFilters();
   wireRecordDialog();
 

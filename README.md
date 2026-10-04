@@ -1,5 +1,7 @@
-# Algorithmic Vernacular
-## An Explainable Evidence Interface for Trabzon Houses
+# Trabzon Vernacular Inventory
+## A Provenance-Aware Evidence Interface
+
+Version 1.2 adds documented inventory cases that connect ten researcher-validated records to source photographs, PDF pages, and coded P1, P8, and P9 attributes. The photographs are evidence from the inventory; the interface remains a schematic representation rather than a measured reconstruction.
 
 **Version:** 1.0.0 – Validated Full-Data Build  
 **Build date:** 2026-08-12
