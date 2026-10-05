@@ -1,7 +1,7 @@
 'use strict';
 
 /* ════════════════════════════════════════════════════════════════════════
-   ALGORITHMIC VERNACULAR — TRABZON HOUSES
+   TRABZON VERNACULAR INVENTORY INTERFACE
    src/app.js · v1.2.0 · Documented Cases Build
 
    Authoritative source order:
@@ -1149,33 +1149,123 @@ function wireDesignExplorerEvents() {
   });
 }
 
-function wireDocumentedCases() {
-  document.querySelectorAll('.case-load').forEach(button => {
-    button.addEventListener('click', () => {
-      const p1 = Number(button.dataset.p1);
-      const p8 = button.dataset.p8;
-      const p9 = button.dataset.p9;
+function materialLabel(key) {
+  return P8_LABELS[key] || key || 'Unavailable';
+}
 
-      state.params.P1 = p1;
-      state.params.P8 = p8;
-      state.params.P9 = p9;
-      syncFormToState();
-      updateP1Trace();
-      updateP8Trace();
-      populateP9Trace();
-      updateConfigSummary();
-      scheduleSchematicUpdate();
-      setInputFeedback({
-        kind: 'evidence',
-        label: 'Documented record attributes loaded',
-        message: `Applied the coded P1, P8, and P9 attributes from the selected inventory record. P2–P7 and P10–P12 remain neutral visualization-only values and must not be interpreted as measurements of that building.`
-      });
+function ensureCaseDialog() {
+  let dialog = document.getElementById('case-source-dialog');
+  if (dialog) return dialog;
+  dialog = document.createElement('dialog');
+  dialog.id = 'case-source-dialog';
+  dialog.className = 'case-source-dialog';
+  dialog.innerHTML = `
+    <div class="case-dialog-header">
+      <h2 id="case-dialog-title">Source record</h2>
+      <button type="button" class="detail-close-btn" aria-label="Close source record">✕</button>
+    </div>
+    <div id="case-dialog-content"></div>`;
+  document.body.appendChild(dialog);
+  dialog.querySelector('.detail-close-btn').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+  return dialog;
+}
 
-      const designTab = document.getElementById('tab-design');
-      if (designTab) designTab.click();
-      document.getElementById('p1-block')?.scrollIntoView({ block: 'start' });
-    });
+function renderDocumentedCases() {
+  const allCases = Array.isArray(window.TRABZON_DOCUMENTED_CASES) ? window.TRABZON_DOCUMENTED_CASES : [];
+  const grid = document.querySelector('.case-grid');
+  if (!grid) return;
+
+  const areaSelect = document.getElementById('case-filter-area');
+  const p1Select = document.getElementById('case-filter-p1');
+  const p8Select = document.getElementById('case-filter-p8');
+  const p9Select = document.getElementById('case-filter-p9');
+  const count = document.getElementById('case-result-count');
+  const clear = document.getElementById('case-filter-clear');
+  const unique = (values) => [...new Set(values)].sort((a,b) => String(a).localeCompare(String(b), 'en'));
+
+  unique(allCases.map(item => item.area)).forEach(value => {
+    areaSelect?.insertAdjacentHTML('beforeend', `<option value="${escHtml(value)}">${escHtml(value)}</option>`);
   });
+  unique(allCases.map(item => item.p8)).forEach(value => {
+    p8Select?.insertAdjacentHTML('beforeend', `<option value="${escHtml(value)}">${escHtml(materialLabel(value))}</option>`);
+  });
+
+  const update = () => {
+    const area = areaSelect?.value || '';
+    const p1 = p1Select?.value || '';
+    const p8 = p8Select?.value || '';
+    const p9 = p9Select?.value || '';
+    const filtered = allCases.filter(item => {
+      const itemP1 = item.p1 == null ? 'unavailable' : String(item.p1);
+      return (!area || item.area === area) && (!p1 || itemP1 === p1) &&
+             (!p8 || item.p8 === p8) && (!p9 || item.p9Visibility === p9);
+    });
+    if (count) count.textContent = `${filtered.length} of ${allCases.length} researcher-validated documented cases shown.`;
+    grid.innerHTML = filtered.map(item => {
+      const p1Text = item.p1 == null ? 'Unavailable in source' : `${item.p1} visible floor${item.p1 === 1 ? '' : 's'}`;
+      const p9Text = item.p9 || 'Unavailable in source';
+      return `<article class="case-card" data-record-id="${escHtml(item.recordId)}">
+        <button type="button" class="case-image-button" data-action="source" aria-label="View source record ${escHtml(item.recordId)}">
+          <img src="${escHtml(item.image)}" alt="Source inventory record ${escHtml(item.recordCode)} in ${escHtml(item.area)}" loading="lazy">
+          <span>View source record</span>
+        </button>
+        <div class="case-card__body">
+          <h3>${escHtml(item.recordCode)} · ${escHtml(item.area)}</h3>
+          <p class="case-source">Working PDF page ${item.sourcePdfPage} · Validation sample ${item.sampleNumber}/30</p>
+          <dl>
+            <div><dt>P1</dt><dd>${escHtml(p1Text)}</dd></div>
+            <div><dt>P8</dt><dd>${escHtml(materialLabel(item.p8))}</dd></div>
+            <div><dt>P9</dt><dd>${escHtml(p9Text)}</dd></div>
+          </dl>
+          <p class="case-status">Researcher validated</p>
+          <p class="case-evidence-note">P1 and P8 collective confirmation; P9 shown only where observable.</p>
+          <button type="button" class="btn btn--secondary case-load" data-action="load">View coded attributes</button>
+        </div>
+      </article>`;
+    }).join('') || '<p class="case-empty">No documented cases match these filters.</p>';
+  };
+
+  [areaSelect,p1Select,p8Select,p9Select].forEach(el => el?.addEventListener('change', update));
+  clear?.addEventListener('click', () => {
+    [areaSelect,p1Select,p8Select,p9Select].forEach(el => { if (el) el.value = ''; });
+    update();
+  });
+  grid.addEventListener('click', event => {
+    const card = event.target.closest('.case-card');
+    const action = event.target.closest('[data-action]')?.dataset.action;
+    if (!card || !action) return;
+    const item = allCases.find(entry => entry.recordId === card.dataset.recordId);
+    if (!item) return;
+    if (action === 'source') {
+      const dialog = ensureCaseDialog();
+      dialog.querySelector('#case-dialog-title').textContent = `${item.recordCode} · ${item.area}`;
+      dialog.querySelector('#case-dialog-content').innerHTML = `
+        <img src="${escHtml(item.image)}" alt="Source inventory record ${escHtml(item.recordId)}">
+        <p><strong>Source:</strong> ${escHtml(item.sourceLabel)}</p>
+        <p><strong>Location in working digital PDF:</strong> page ${item.sourcePdfPage}. This is not the printed page number.</p>
+        <p><strong>Interpretation boundary:</strong> The source image documents the inventory record. The interface representation is schematic and is not a measured reconstruction.</p>`;
+      dialog.showModal();
+      return;
+    }
+    if (item.p1 != null) state.params.P1 = item.p1;
+    state.params.P8 = item.p8;
+    state.params.P9 = item.p9 || '';
+    syncFormToState(); updateP1Trace(); updateP8Trace(); populateP9Trace();
+    updateConfigSummary(); scheduleSchematicUpdate();
+    const loaded = [item.p1 == null ? null : 'P1', 'P8', item.p9 ? 'P9' : null].filter(Boolean).join(', ');
+    setInputFeedback({
+      kind: 'evidence', label: 'Documented record attributes loaded',
+      message: `Applied ${loaded} from ${item.recordId}. Unavailable attributes were not inferred. P2–P7 and P10–P12 remain neutral visualization-only values and are not measurements of this building.`
+    });
+    document.getElementById('tab-design')?.click();
+    document.getElementById('p1-block')?.scrollIntoView({ block: 'start' });
+  });
+  update();
+}
+
+function wireDocumentedCases() {
+  renderDocumentedCases();
 }
 
 /** Sync all form controls to current state.params */
@@ -1577,24 +1667,23 @@ function buildMethodContent() {
     <div class="method-section">
       <h3>1. Inventory and Scope</h3>
       <p>The source is the <em>Trabzon Kent İçi Kültür Varlıkları Envanteri</em> (Özen et al., 2010), pages 291–448. This inventory records residential buildings in Trabzon's historic urban fabric using standardised inventory fichas (fişler).</p>
-      <p>The inventory assigns <strong>265 codes</strong> to residential buildings. Two codes refer to the same physical building; therefore the independent candidate set contains <strong>264 records</strong>. Of these, <strong>183 records</strong> were analysed (146 included, 37 partially included). <strong>81 records</strong> in the candidate scope were excluded from analysis because they were insufficiently documented for the analysis parameters. Excluded records are present in the candidate scope only and do not appear in the analysis record set.</p>
+      <p>The inventory assigns <strong>265 codes</strong> to residential candidates. Two codes refer to the same physical building; therefore the independent candidate set contains <strong>264 records</strong>. Of these, <strong>183 records</strong> were analysed (146 included, 37 partially included). <strong>81 records</strong> were excluded: 56 did not have a residential original function or building type, and 25 were recorded as reinforced-concrete or reconstructed buildings. Excluded records remain visible only in the candidate-scope data.</p>
       <p>Masonry appears in 178 of 183 preliminary normalized construction-system records (97.3%). This is contextual descriptive information; five records remain other/unclear and require human review.</p>
     </div>
 
     <div class="method-section">
-      <h3>2. AI / VLM-Assisted Initial Extraction</h3>
-      <p><strong>Method flow:</strong> Inventory sheets → AI/VLM-assisted initial feature extraction → scope screening → P1 second visual audit → 30-record collective researcher confirmation for P1 and P8 → descriptive evidence interface.</p>
-      <p>An AI vision-language model (VLM) was used to assist with first-pass data extraction from the inventory PDF pages. The AI role was structured data extraction — not autonomous architectural classification. All extracted values required human review, cross-checking against the source document, and correction where necessary.</p>
-      <p>The AI did not determine inclusion status, final P1 values, or P8 categories. Those were established through the scope screening and second visual audit steps described below.</p>
+      <h3>2. Initial Data Structuring</h3>
+      <p><strong>Method flow:</strong> inventory sheets → assisted initial structuring → scope screening → P1 visual audit → 30-record collective confirmation → descriptive evidence interface.</p>
+      <p>A vision-language model assisted the preliminary transfer of visual and textual information into a common data structure. The current browser interface performs no AI inference. The available study documentation does not report the model version, prompts, or inference settings, and no systematic model-accuracy evaluation was conducted. The AI-assisted step is therefore not presented as a validated methodological contribution.</p>
     </div>
 
     <div class="method-section">
       <h3>3. Scope Screening and Inclusion Criteria</h3>
       <p>Each of the 264 candidates was reviewed against a documented inclusion protocol. Records were classified as:</p>
       <ul>
-        <li><strong>Included (146 records):</strong> sufficiently documented for analysis of P1 and P8.</li>
-        <li><strong>Partially included (37 records):</strong> analysable for some but not all parameters; specific limitations noted per record.</li>
-        <li><strong>Excluded (81 records):</strong> insufficient documentation, the building no longer exists, or the record does not represent a traditional residential building. These records appear only in the candidate scope, not in the analysis records.</li>
+        <li><strong>Included (146 records):</strong> met the inclusion criteria and were retained in the analysis dataset. P8 was coded for every included record; P1 was coded only where visible floor count could be confirmed.</li>
+        <li><strong>Partially included (37 records):</strong> originated as residential buildings but were retained with limitations related to current use or physical condition.</li>
+        <li><strong>Excluded (81 records):</strong> 56 non-residential original functions or building types and 25 reinforced-concrete or reconstructed records. These appear only in the candidate scope.</li>
       </ul>
     </div>
 
@@ -1614,9 +1703,9 @@ function buildMethodContent() {
     <div class="method-section">
       <h3>5. Researcher Collective Confirmation</h3>
       <div class="limitation-callout">
-        The researcher collectively confirmed the existing P1 and P8 codes in the selected 30-record sample. The values were not produced through an independent blind recoding exercise. Therefore, 30/30 must not be interpreted as inter-rater reliability, model accuracy, or a guarantee for all 183 records.
+        The researcher collectively reviewed the existing P1 states and P8 codes in the selected 30-record sample. Four P1 states remain unavailable. The review was not an independent blind recoding exercise; therefore, it must not be interpreted as inter-rater reliability, model accuracy, or a guarantee for all 183 records.
       </div>
-      <p>The researcher collectively confirmed the existing P1 and P8 codes in the selected 30-record sample on ${val.date}. The sample was stratified and exception-inclusive. All 30 P1 values matched (${val.p1Matches}/30); all 30 P8 category assignments matched (${val.p8Matches}/30). No corrections were required (correctionRequired: ${val.correctionRequired}).</p>
+      <p>The researcher collectively confirmed the existing P1 states and P8 codes in the selected 30-record sample on ${val.date}. Four sampled records retain an unavailable P1 state because visible floor count could not be confirmed; no value was inferred for them. The confirmation exercise reported no required corrections. It was not independent blind recoding and does not provide a model-accuracy or inter-rater reliability estimate.</p>
       <p>The 30-record confirmation covered ${val.researcherValidatedRowsInFullDataset} of the 183 analysis records. The remaining ${val.remainingRowsRequiringResearcherReview} records have the status "researcher review required" and are individually identifiable in the Evidence Explorer.</p>
     </div>
 
@@ -1638,6 +1727,13 @@ function buildMethodContent() {
         </tbody>
       </table>
       <p>P9 roof material has low and area-imbalanced coverage: ${agg.p9.observed} records observable, ${agg.p9.counts['NA']} unavailable. The observable records are not evenly distributed across the eight inventory areas. No generalisation from these ${agg.p9.observed} records to the full population is warranted.</p>
+    </div>
+
+    <div class="method-section">
+      <h3>7. Methodological Boundaries</h3>
+      <p><strong>This interface is not a shape grammar.</strong> It does not derive dynamic part relations or production rules. It uses a fixed attribute schema and schematic controls to display selected inventory information.</p>
+      <p>The interface organizes 183 records, distinguishes evidence conditions, and links the complete 30-record researcher-validated subset to source images. It does not generate design rules, perform live AI inference, reconstruct measured buildings, assess regional authenticity, calculate compatibility or confidence scores, or evaluate architectural quality.</p>
+      <p>No user study was conducted. The prototype has not been evaluated for usability, improvement in user understanding, heritage decision support, or effects on design reasoning. Functional checks establish software operation only.</p>
     </div>
 
     <div class="method-section">

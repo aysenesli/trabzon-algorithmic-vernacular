@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trabzon Vernacular Inventory: A Provenance-Aware Evidence Interface</title>
   <script src="data/ascaad26-evidence-data.js"></script>
+  <script src="data/documented-cases.js"></script>
   <link rel="stylesheet" href="assets/styles.css">
   <script src="src/app.js" defer></script>
 </head>
@@ -17,7 +18,7 @@
     <div class="header-inner">
       <div class="header-title-group">
         <h1 class="site-title">Trabzon Vernacular Inventory</h1>
-        <span class="version-chip" aria-label="Version">v1.2.0 · Documented Cases Build</span>
+        <span class="version-chip" aria-label="Version">v1.3.0 · 30 Validated Cases</span>
       </div>
       <p class="persistent-disclosure" id="persistent-disclosure">
         This interface reports descriptive inventory evidence and visualization inputs.
@@ -564,10 +565,38 @@
             <p class="eyebrow">Source-linked examples</p>
             <h2 id="documented-cases-title">Documented Inventory Cases</h2>
             <p>
-              These examples connect record-level inventory photographs to the coded attributes used by the interface.
-              The photographs are source evidence; the digital model remains a schematic abstraction and is not a measured reconstruction.
+              These thirty cases are the complete researcher-validated subset of the current dataset. Each case connects
+              its source record to confirmed P1 and P8 coding; P9 is shown only where observable. The cases demonstrate
+              source linkage and are not a statistically representative sample of all Trabzon vernacular houses.
             </p>
           </div>
+
+          <div class="case-toolbar" aria-label="Documented case filters">
+            <label>Inventory area
+              <select id="case-filter-area"><option value="">All areas</option></select>
+            </label>
+            <label>P1 visible floors
+              <select id="case-filter-p1">
+                <option value="">All P1 states</option>
+                <option value="unavailable">Unavailable</option>
+                <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                <option value="4">4</option><option value="5">5</option>
+              </select>
+            </label>
+            <label>P8 material
+              <select id="case-filter-p8"><option value="">All materials</option></select>
+            </label>
+            <label>P9 evidence
+              <select id="case-filter-p9">
+                <option value="">All P9 states</option>
+                <option value="observable">Observable</option>
+                <option value="not observable">Unavailable</option>
+              </select>
+            </label>
+            <button type="button" id="case-filter-clear" class="btn btn--secondary">Clear filters</button>
+          </div>
+
+          <p id="case-result-count" class="case-result-count" role="status" aria-live="polite"></p>
 
           <div class="case-grid">
             <article class="case-card">
@@ -682,7 +711,9 @@
           </div>
 
           <p class="case-boundary">
-            Interpretation boundary: the photographs document the source records. The interface visualizes selected coded attributes only and does not reconstruct the recorded buildings geometrically.
+            Interpretation boundary: source images document the inventory records. The schematic representation is not a measured
+            reconstruction. Thirty records received collective researcher confirmation; this was not independent blind recoding,
+            model-accuracy evaluation, or inter-rater reliability testing.
           </p>
         </section>
 

@@ -1,7 +1,7 @@
 window.ASCAAD26_EVIDENCE_DATA = {
   "metadata": {
-    "project": "ASCAAD26 - Algorithmic Vernacular",
-    "interfaceTitle": "Algorithmic Vernacular: An Explainable Evidence Interface for Trabzon Houses",
+    "project": "ASCAAD26 - Trabzon Vernacular Inventory",
+    "interfaceTitle": "Trabzon Vernacular Inventory: A Source-Traceable Information Interface",
     "datasetVersion": "2026-08-12",
     "source": "Trabzon Kent İçi Kültür Varlıkları Envanteri (Özen et al., 2010)",
     "sourceFile": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf",

@@ -1,16 +1,16 @@
 # Trabzon Vernacular Inventory
 ## A Provenance-Aware Evidence Interface
 
-Version 1.2 adds documented inventory cases that connect ten researcher-validated records to source photographs, PDF pages, and coded P1, P8, and P9 attributes. The photographs are evidence from the inventory; the interface remains a schematic representation rather than a measured reconstruction.
+Version 1.3 presents the complete 30-record researcher-validated subset with source images, working PDF page positions, and coded P1, P8, and P9 attributes. The source images document the inventory records; the interface remains a schematic representation rather than a measured reconstruction.
 
-**Version:** 1.0.0 – Validated Full-Data Build  
+**Version:** 1.3.0 – 30 Validated Cases Build  
 **Build date:** 2026-08-12
 
 ---
 
 ## Purpose
 
-This tool allows architects and researchers to explore parametric dimensions of residential vernacular architecture in Trabzon's historically designated urban conservation zones. The interface presents evidence extracted from 183 analysis records drawn from the Trabzon Kent İçi Kültür Varlıkları Envanteri (Özen et al., 2010).
+This tool organizes and displays information from 183 residential inventory records in Trabzon's historically designated urban conservation zones. It distinguishes descriptive evidence, limited record-level evidence, and schematic visualization inputs derived from the Trabzon Kent İçi Kültür Varlıkları Envanteri (Özen et al., 2010).
 
 **Interpretive boundary:** This interface reports descriptive inventory evidence and visualization inputs. It does not evaluate architectural correctness, compatibility, authenticity, or design quality.
 
@@ -38,9 +38,11 @@ Open `index.html` directly in any modern browser. No server, build step, or inte
 trabzon-algorithmic-vernacular/
 ├── index.html                     Primary entry point
 ├── assets/
-│   └── styles.css                 Application stylesheet
+│   ├── styles.css                 Application stylesheet
+│   └── inventory-cases-v2/        Source images for 30 validated records
 ├── data/
-│   └── ascaad26-evidence-data.js  Immutable evidence dataset (window.ASCAAD26_EVIDENCE_DATA)
+│   ├── ascaad26-evidence-data.js  Evidence dataset (window.ASCAAD26_EVIDENCE_DATA)
+│   └── documented-cases.js        Validated case metadata and source-image paths
 ├── src/
 │   └── app.js                     Application logic (vanilla JS, no dependencies)
 ├── README.md                      This file
@@ -99,7 +101,7 @@ One combined inventory sheet carries two codes; therefore 265 codes correspond t
 - **Researcher confirmation:** 30 records collectively confirmed by the research team (stratified, exception-inclusive; 2026-08-12).
 - **Remaining records requiring researcher review:** 153
 
-**Validation limitation:** The researcher collectively confirmed the existing P1 and P8 codes in the selected 30-record sample. The values were not produced through an independent blind recoding exercise. Therefore, 30/30 must not be interpreted as inter-rater reliability, model accuracy, or a guarantee for all 183 records.
+**Validation limitation:** The researcher collectively reviewed the existing P1 states and P8 codes in the selected 30-record sample. Four P1 states remain unavailable. The review was not an independent blind recoding exercise; therefore, it must not be interpreted as inter-rater reliability, model accuracy, or a guarantee for all 183 records.
 
 Statistical independence of P1 and P8 was tested (chi-square = 5.013, N = 148, df = 2, p = 0.082, Cramér's V = 0.184). The result is not statistically significant at α = 0.05. No automatic relationship between P1 and P8 is implemented.
 
