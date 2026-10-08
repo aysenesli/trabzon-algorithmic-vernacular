@@ -16,8 +16,8 @@
   /* Text */
   --t-0: #cdd9e5;
   --t-1: #adbac7;
-  --t-2: #768390;
-  --t-3: #4b5563;
+  --t-2: #a0afbf;
+  --t-3: #94a3b8;
 
   /* Evidence class colours */
   --c-descriptive: #2dd4bf;
@@ -1407,3 +1407,9 @@ body {
 @media (max-width: 1050px) and (min-width: 601px) {
   .case-toolbar { grid-template-columns: repeat(2, minmax(180px, 1fr)); }
 }
+
+/* Source attribution and clearer secondary text, v1.4.0 */
+.site-subtitle { margin: .35rem 0 0; color: var(--t-2); font-size: .92rem; }
+.inventory-source { padding: 1rem 1.2rem; margin: 0 0 1.2rem; background: var(--bg-1); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: var(--radius); }
+.inventory-source h3 { margin: 0 0 .55rem; color: var(--t-0); font-size: 1rem; }
+.inventory-source p { margin: .4rem 0; color: var(--t-2); line-height: 1.6; font-size: .9rem; }

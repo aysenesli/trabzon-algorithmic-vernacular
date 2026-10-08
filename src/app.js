@@ -1201,7 +1201,7 @@ function renderDocumentedCases() {
       return (!area || item.area === area) && (!p1 || itemP1 === p1) &&
              (!p8 || item.p8 === p8) && (!p9 || item.p9Visibility === p9);
     });
-    if (count) count.textContent = `${filtered.length} of ${allCases.length} researcher-validated documented cases shown.`;
+    if (count) count.textContent = `${filtered.length} of ${allCases.length} researcher-reviewed documented cases shown.`;
     grid.innerHTML = filtered.map(item => {
       const p1Text = item.p1 == null ? 'Unavailable in source' : `${item.p1} visible floor${item.p1 === 1 ? '' : 's'}`;
       const p9Text = item.p9 || 'Unavailable in source';
@@ -1212,13 +1212,13 @@ function renderDocumentedCases() {
         </button>
         <div class="case-card__body">
           <h3>${escHtml(item.recordCode)} · ${escHtml(item.area)}</h3>
-          <p class="case-source">Working PDF page ${item.sourcePdfPage} · Validation sample ${item.sampleNumber}/30</p>
+          <p class="case-source">Working PDF page ${item.sourcePdfPage} · Reviewed record ${item.sampleNumber}/30</p>
           <dl>
             <div><dt>P1</dt><dd>${escHtml(p1Text)}</dd></div>
             <div><dt>P8</dt><dd>${escHtml(materialLabel(item.p8))}</dd></div>
             <div><dt>P9</dt><dd>${escHtml(p9Text)}</dd></div>
           </dl>
-          <p class="case-status">Researcher validated</p>
+          <p class="case-status">Researcher-reviewed</p>
           <p class="case-evidence-note">P1 and P8 collective confirmation; P9 shown only where observable.</p>
           <button type="button" class="btn btn--secondary case-load" data-action="load">View coded attributes</button>
         </div>
@@ -1365,7 +1365,7 @@ function renderTable() {
     const incClass  = r.inclusion_status === 'included'  ? 'status-included' :
                       r.inclusion_status === 'partially included' ? 'status-partial' : '';
     const revClass  = r.review_status === 'researcher validated' ? 'status-validated' : 'status-review';
-    const revLabel  = r.review_status === 'researcher validated' ? '✓ Validated' : 'Review required';
+    const revLabel  = r.review_status === 'researcher validated' ? '✓ Researcher-reviewed' : 'Review required';
 
     return `<tr>
       <td class="cell-id">${escHtml(r.record_id)}</td>
@@ -1515,7 +1515,7 @@ function openRecordDetail(rec) {
   const p9Unavailable = rec.p9_roof_material_limited == null || rec.p9_roof_material_limited === '';
   const p9Display   = p9Unavailable ? 'Unavailable (limited evidence)' : rec.p9_roof_material_limited;
   const revLabel    = rec.review_status === 'researcher validated'
-                        ? '✓ Researcher validated (collective confirmation, 2026-08-12)'
+                        ? '✓ Researcher-reviewed (joint review, 2026-08-12)'
                         : 'Researcher review required';
 
   const field = (title, value, cls = '', wide = false) =>
@@ -1525,6 +1525,7 @@ function openRecordDetail(rec) {
      </div>`;
 
   content.innerHTML = `
+    ${field('Inventory source', 'Trabzon Kent İçi Kültür Varlıkları Envanteri (Özen et al., 2010)', '', true)}
     ${field('Record ID',          rec.record_id)}
     ${field('Record Code',        rec.record_code)}
     ${field('Area',               rec.area)}
@@ -1732,7 +1733,7 @@ function buildMethodContent() {
     <div class="method-section">
       <h3>7. Methodological Boundaries</h3>
       <p><strong>This interface is not a shape grammar.</strong> It does not derive dynamic part relations or production rules. It uses a fixed attribute schema and schematic controls to display selected inventory information.</p>
-      <p>The interface organizes 183 records, distinguishes evidence conditions, and links the complete 30-record researcher-validated subset to source images. It does not generate design rules, perform live AI inference, reconstruct measured buildings, assess regional authenticity, calculate compatibility or confidence scores, or evaluate architectural quality.</p>
+      <p>The interface organizes 183 records, distinguishes evidence conditions, and links the complete 30-record researcher-reviewed subset to source images. It does not generate design rules, perform live AI inference, reconstruct measured buildings, assess regional authenticity, calculate compatibility or confidence scores, or evaluate architectural quality.</p>
       <p>No user study was conducted. The prototype has not been evaluated for usability, improvement in user understanding, heritage decision support, or effects on design reasoning. Functional checks establish software operation only.</p>
     </div>
 
