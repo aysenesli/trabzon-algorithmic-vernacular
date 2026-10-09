@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trabzon Vernacular Explorer | Interactive Architectural Inventory</title>
   <script src="data/ascaad26-evidence-data.js"></script>
-  <script src="data/documented-cases.js"></script>
   <link rel="stylesheet" href="assets/styles.css">
   <script src="src/app.js" defer></script>
 </head>
@@ -19,7 +18,7 @@
       <div class="header-title-group">
         <h1 class="site-title">Trabzon Vernacular Explorer</h1>
         <p class="site-subtitle">Interactive Architectural Inventory</p>
-        <span class="version-chip" aria-label="Version">v1.4.0 · 183 Records · 30 Researcher-Reviewed</span>
+        <span class="version-chip" aria-label="Version">v1.5.0 · 183 Records · Photo-free</span>
       </div>
       <p class="persistent-disclosure" id="persistent-disclosure">
         This interface reports descriptive inventory evidence and visualization inputs.
@@ -472,7 +471,7 @@
         <section class="inventory-source" aria-labelledby="inventory-source-title">
           <h3 id="inventory-source-title">Inventory source</h3>
           <p>Özen et al. (2010). <cite>Trabzon Kent İçi Kültür Varlıkları Envanteri.</cite></p>
-          <p>Photographs and textual descriptions originate from this publication. Page locations refer to the working PDF. The analysis dataset contains 183 records; 30 have been reviewed by researchers and 153 require review.</p>
+          <p>The dataset contains 183 coded inventory records. Record codes, areas and working-PDF page locations identify their source. Inventory photographs are not reproduced in this interface. A populated field indicates available coding, not independent verification.</p>
         </section>
 
         <!-- Filter bar -->
@@ -544,14 +543,7 @@
               </select>
             </div>
 
-            <div class="filter-item">
-              <label class="filter-label" for="filter-review">Review Status</label>
-              <select id="filter-review" class="filter-select">
-                <option value="">All records</option>
-                <option value="researcher validated">Researcher-reviewed (30)</option>
-                <option value="researcher review required">Researcher review required (153)</option>
-              </select>
-            </div>
+
 
             <div class="filter-item filter-item--actions">
               <button type="button" id="clear-filters-btn" class="btn btn--secondary">
@@ -567,162 +559,7 @@
           <!-- Populated by buildExplorerDistributions() -->
         </div>
 
-        <section class="documented-cases" aria-labelledby="documented-cases-title">
-          <div class="documented-cases__intro">
-            <p class="eyebrow">Source-linked examples</p>
-            <h2 id="documented-cases-title">Documented Inventory Cases</h2>
-            <p>
-              These thirty cases are the complete researcher-reviewed subset of the current dataset. Each case connects
-              its source record to confirmed P1 and P8 coding; P9 is shown only where observable. The cases demonstrate
-              source linkage and are not a statistically representative sample of all Trabzon vernacular houses.
-            </p>
-          </div>
 
-          <div class="case-toolbar" aria-label="Documented case filters">
-            <label>Inventory area
-              <select id="case-filter-area"><option value="">All areas</option></select>
-            </label>
-            <label>P1 visible floors
-              <select id="case-filter-p1">
-                <option value="">All P1 states</option>
-                <option value="unavailable">Unavailable</option>
-                <option value="1">1</option><option value="2">2</option><option value="3">3</option>
-                <option value="4">4</option><option value="5">5</option>
-              </select>
-            </label>
-            <label>P8 material
-              <select id="case-filter-p8"><option value="">All materials</option></select>
-            </label>
-            <label>P9 evidence
-              <select id="case-filter-p9">
-                <option value="">All P9 states</option>
-                <option value="observable">Observable</option>
-                <option value="not observable">Unavailable</option>
-              </select>
-            </label>
-            <button type="button" id="case-filter-clear" class="btn btn--secondary">Clear filters</button>
-          </div>
-
-          <p id="case-result-count" class="case-result-count" role="status" aria-live="polite"></p>
-
-          <div class="case-grid">
-            <article class="case-card">
-              <img src="assets/inventory-cases/k24-page305.jpg" alt="Inventory photograph of record K-24, Mehmet Kavaklı House">
-              <div class="case-card__body">
-                <h3>K-24 · Mehmet Kavaklı House</h3>
-                <p class="case-source">1 No.lu Kentsel Sit · PDF page 305</p>
-                <dl><div><dt>P1</dt><dd>2 visible floors</dd></div><div><dt>P8</dt><dd>Stone / masonry</dd></div><div><dt>P9</dt><dd>Tile, type unspecified</dd></div></dl>
-                <p class="case-status">Researcher-reviewed</p>
-                <button type="button" class="btn btn--secondary case-load" data-p1="2" data-p8="stone/masonry" data-p9="tile (type unspecified)">View coded attributes</button>
-              </div>
-            </article>
-
-            <article class="case-card">
-              <img src="assets/inventory-cases/i01-page403.jpg" alt="Inventory photograph of record I-01 in Meydan and its immediate surroundings">
-              <div class="case-card__body">
-                <h3>I-01 · Meydan and Immediate Surroundings</h3>
-                <p class="case-source">Meydan ve Yakın Çevresi · PDF page 403</p>
-                <dl><div><dt>P1</dt><dd>4 visible floors</dd></div><div><dt>P8</dt><dd>Stone / masonry</dd></div><div><dt>P9</dt><dd>Tile, type unspecified</dd></div></dl>
-                <p class="case-status">Researcher-reviewed</p>
-                <button type="button" class="btn btn--secondary case-load" data-p1="4" data-p8="stone/masonry" data-p9="tile (type unspecified)">View coded attributes</button>
-              </div>
-            </article>
-
-            <article class="case-card">
-              <img src="assets/inventory-cases/k18-page417.jpg" alt="Inventory photograph of record K-18, Salih Hamzaoğlu House">
-              <div class="case-card__body">
-                <h3>K-18 · Salih Hamzaoğlu House</h3>
-                <p class="case-source">Tekke–Gazipaşa–Boztepe · PDF page 417</p>
-                <dl><div><dt>P1</dt><dd>1 visible floor</dd></div><div><dt>P8</dt><dd>Stone + timber + bağdadi</dd></div><div><dt>P9</dt><dd>Tile, type unspecified</dd></div></dl>
-                <p class="case-status">Researcher-reviewed</p>
-                <button type="button" class="btn btn--secondary case-load" data-p1="1" data-p8="stone+timber+bagdadi" data-p9="tile (type unspecified)">View coded attributes</button>
-              </div>
-            </article>
-
-            <article class="case-card">
-              <img src="assets/inventory-cases/k16-page430.jpg" alt="Inventory photograph of record K-16 in Cumhuriyet">
-              <div class="case-card__body">
-                <h3>K-16 · Cumhuriyet</h3>
-                <p class="case-source">Cumhuriyet · PDF page 430</p>
-                <dl><div><dt>P1</dt><dd>2 visible floors</dd></div><div><dt>P8</dt><dd>Stone / masonry</dd></div><div><dt>P9</dt><dd>Tile, type unspecified</dd></div></dl>
-                <p class="case-status">Researcher-reviewed</p>
-                <button type="button" class="btn btn--secondary case-load" data-p1="2" data-p8="stone/masonry" data-p9="tile (type unspecified)">View coded attributes</button>
-              </div>
-            </article>
-
-            <article class="case-card">
-              <img src="assets/inventory-cases/k02-page433.jpg" alt="Inventory photograph of record K-02 in Çömlekçi">
-              <div class="case-card__body">
-                <h3>K-02 · Çömlekçi</h3>
-                <p class="case-source">Çömlekçi · PDF page 433</p>
-                <dl><div><dt>P1</dt><dd>3 visible floors</dd></div><div><dt>P8</dt><dd>Stone + timber</dd></div><div><dt>P9</dt><dd>Tile, type unspecified</dd></div></dl>
-                <p class="case-status">Researcher-reviewed</p>
-                <button type="button" class="btn btn--secondary case-load" data-p1="3" data-p8="stone+timber" data-p9="tile (type unspecified)">View coded attributes</button>
-              </div>
-            </article>
-
-            <article class="case-card">
-              <img src="assets/inventory-cases/k18-page302.jpg" alt="Inventory photograph of record K-18, Mustafa Er House">
-              <div class="case-card__body">
-                <h3>K-18 · Mustafa Er House</h3>
-                <p class="case-source">1 No.lu Kentsel Sit · PDF page 302</p>
-                <dl><div><dt>P1</dt><dd>3 visible floors</dd></div><div><dt>P8</dt><dd>Stone + timber + bağdadi</dd></div><div><dt>P9</dt><dd>Unavailable</dd></div></dl>
-                <p class="case-status">Researcher-reviewed</p>
-                <button type="button" class="btn btn--secondary case-load" data-p1="3" data-p8="stone+timber+bagdadi" data-p9="">View coded attributes</button>
-              </div>
-            </article>
-
-            <article class="case-card">
-              <img src="assets/inventory-cases/k44-page340.jpg" alt="Inventory photograph of record K-44 in 2 No.lu Kentsel Sit">
-              <div class="case-card__body">
-                <h3>K-44 · 2 No.lu Kentsel Sit</h3>
-                <p class="case-source">2 No.lu Kentsel Sit · PDF page 340</p>
-                <dl><div><dt>P1</dt><dd>2 visible floors</dd></div><div><dt>P8</dt><dd>Stone + timber + bağdadi</dd></div><div><dt>P9</dt><dd>Unavailable</dd></div></dl>
-                <p class="case-status">Researcher-reviewed</p>
-                <button type="button" class="btn btn--secondary case-load" data-p1="2" data-p8="stone+timber+bagdadi" data-p9="">View coded attributes</button>
-              </div>
-            </article>
-
-            <article class="case-card">
-              <img src="assets/inventory-cases/i38-page367.jpg" alt="Inventory photograph of record I-38 in 3 No.lu Kentsel Sit">
-              <div class="case-card__body">
-                <h3>I-38 · 3 No.lu Kentsel Sit</h3>
-                <p class="case-source">3 No.lu Kentsel Sit · PDF page 367</p>
-                <dl><div><dt>P1</dt><dd>2 visible floors</dd></div><div><dt>P8</dt><dd>Stone + brick</dd></div><div><dt>P9</dt><dd>Unavailable</dd></div></dl>
-                <p class="case-status">Researcher-reviewed</p>
-                <button type="button" class="btn btn--secondary case-load" data-p1="2" data-p8="stone+brick" data-p9="">View coded attributes</button>
-              </div>
-            </article>
-
-            <article class="case-card">
-              <img src="assets/inventory-cases/k04-page372.jpg" alt="Inventory photograph of record K-04 in Pazarkapı">
-              <div class="case-card__body">
-                <h3>K-04 · Pazarkapı</h3>
-                <p class="case-source">Pazarkapı · PDF page 372</p>
-                <dl><div><dt>P1</dt><dd>3 visible floors</dd></div><div><dt>P8</dt><dd>Briquette / masonry</dd></div><div><dt>P9</dt><dd>Unavailable</dd></div></dl>
-                <p class="case-status">Researcher-reviewed</p>
-                <button type="button" class="btn btn--secondary case-load" data-p1="3" data-p8="briquette/masonry" data-p9="">View coded attributes</button>
-              </div>
-            </article>
-
-            <article class="case-card">
-              <img src="assets/inventory-cases/k14-page439.jpg" alt="Inventory photograph of record K-14 in Çömlekçi">
-              <div class="case-card__body">
-                <h3>K-14 · Çömlekçi</h3>
-                <p class="case-source">Çömlekçi · PDF page 439</p>
-                <dl><div><dt>P1</dt><dd>3 visible floors</dd></div><div><dt>P8</dt><dd>Stone + timber + brick</dd></div><div><dt>P9</dt><dd>Unavailable</dd></div></dl>
-                <p class="case-status">Researcher-reviewed</p>
-                <button type="button" class="btn btn--secondary case-load" data-p1="3" data-p8="stone+timber+brick" data-p9="">View coded attributes</button>
-              </div>
-            </article>
-          </div>
-
-          <p class="case-boundary">
-            Interpretation boundary: source images document the inventory records. The schematic representation is not a measured
-            reconstruction. Thirty records received collective researcher confirmation; this was not independent blind recoding,
-            model-accuracy evaluation, or inter-rater reliability testing.
-          </p>
-        </section>
 
         <!-- Table container -->
         <div class="table-wrapper" role="region" aria-label="Analysis records table" tabindex="0">
@@ -737,7 +574,6 @@
                 <th scope="col">P8 Category</th>
                 <th scope="col">P9 Visibility / Material</th>
                 <th scope="col">Construction System</th>
-                <th scope="col">Review Status</th>
                 <th scope="col">Details</th>
               </tr>
             </thead>

@@ -12,7 +12,10 @@ window.ASCAAD26_EVIDENCE_DATA = {
     "includedRecords": 146,
     "partiallyIncludedRecords": 37,
     "excludedRecords": 81,
-    "strictInterpretation": "The interface provides descriptive evidence and transparent provenance. It does not infer regional authenticity, compatibility, correctness, design quality, or AI confidence."
+    "strictInterpretation": "The interface provides descriptive evidence and transparent provenance. It does not infer regional authenticity, compatibility, correctness, design quality, or AI confidence.",
+    "interfaceVersion": "1.5.0",
+    "publicationMode": "Photo-free inventory interface; no separate case gallery",
+    "dataAvailabilityNote": "Coded field availability is not an independent verification or accuracy measure."
   },
   "evidencePolicy": {
     "accepted": [
@@ -32,17 +35,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "Stating that 466 buildings were analysed",
       "Live AI or model inference in the browser"
     ]
-  },
-  "validation": {
-    "method": "Collective researcher confirmation of the existing P1 and P8 codes in a stratified and exception-inclusive 30-record sample",
-    "date": "2026-08-12",
-    "sampleSize": 30,
-    "p1Matches": 30,
-    "p8Matches": 30,
-    "correctionRequired": false,
-    "limitation": "This was not independent blind recoding and must not be reported as inter-rater reliability, model accuracy, or a guarantee for all 183 records.",
-    "researcherValidatedRowsInFullDataset": 30,
-    "remainingRowsRequiringResearcherReview": 153
   },
   "aggregates": {
     "candidateInclusionStatus": {
@@ -3936,7 +3928,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -3961,7 +3952,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -3986,7 +3976,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher validated",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4011,7 +4000,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4036,7 +4024,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4061,7 +4048,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4086,7 +4072,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4111,7 +4096,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4136,7 +4120,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4161,7 +4144,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4186,7 +4168,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4211,7 +4192,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher validated",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4236,7 +4216,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4261,7 +4240,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4286,7 +4264,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4311,7 +4288,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher validated",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4336,7 +4312,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4361,7 +4336,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4386,7 +4360,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4411,7 +4384,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher validated",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4436,7 +4408,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4461,7 +4432,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4486,7 +4456,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4511,7 +4480,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4536,7 +4504,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4561,7 +4528,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4586,7 +4552,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4611,7 +4576,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4636,7 +4600,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4661,7 +4624,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4686,7 +4648,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher validated",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4711,7 +4672,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher validated",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4736,7 +4696,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4761,7 +4720,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4786,7 +4744,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4811,7 +4768,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4836,7 +4792,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4861,7 +4816,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher validated",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4886,7 +4840,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4911,7 +4864,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4936,7 +4888,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4961,7 +4912,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -4986,7 +4936,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5011,7 +4960,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5036,7 +4984,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5061,7 +5008,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5086,7 +5032,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5111,7 +5056,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5136,7 +5080,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5161,7 +5104,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5186,7 +5128,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5211,7 +5152,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5236,7 +5176,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5261,7 +5200,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5286,7 +5224,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5311,7 +5248,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher validated",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5336,7 +5272,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5361,7 +5296,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5386,7 +5320,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher validated",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5411,7 +5344,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5436,7 +5368,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5461,7 +5392,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5486,7 +5416,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "metal sheet/mixed repair",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5511,7 +5440,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher validated",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5536,7 +5464,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5561,7 +5488,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5586,7 +5512,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5611,7 +5536,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5636,7 +5560,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5661,7 +5584,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher validated",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5686,7 +5608,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher validated",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5711,7 +5632,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5736,7 +5656,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5761,7 +5680,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5786,7 +5704,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5811,7 +5728,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5836,7 +5752,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5861,7 +5776,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5886,7 +5800,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5911,7 +5824,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5936,7 +5848,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5961,7 +5872,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -5986,7 +5896,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher validated",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6011,7 +5920,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6036,7 +5944,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6061,7 +5968,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6086,7 +5992,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6111,7 +6016,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6136,7 +6040,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6161,7 +6064,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher validated",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6186,7 +6088,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6211,7 +6112,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6236,7 +6136,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6261,7 +6160,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher validated",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6286,7 +6184,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher validated",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6311,7 +6208,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6336,7 +6232,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6361,7 +6256,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6386,7 +6280,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6411,7 +6304,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6436,7 +6328,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher validated",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6461,7 +6352,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6486,7 +6376,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6511,7 +6400,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6536,7 +6424,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6561,7 +6448,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6586,7 +6472,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher validated",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6611,7 +6496,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6636,7 +6520,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6661,7 +6544,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher validated",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6686,7 +6568,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6711,7 +6592,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6736,7 +6616,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6761,7 +6640,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6786,7 +6664,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6811,7 +6688,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6836,7 +6712,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6861,7 +6736,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6886,7 +6760,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6911,7 +6784,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6936,7 +6808,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6961,7 +6832,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -6986,7 +6856,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7011,7 +6880,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher validated",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7036,7 +6904,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7061,7 +6928,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7086,7 +6952,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7111,7 +6976,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7136,7 +7000,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7161,7 +7024,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7186,7 +7048,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher validated",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7211,7 +7072,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7236,7 +7096,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7261,7 +7120,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7286,7 +7144,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher validated",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7311,7 +7168,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7336,7 +7192,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7361,7 +7216,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher validated",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7386,7 +7240,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher validated",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7411,7 +7264,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7436,7 +7288,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7461,7 +7312,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7486,7 +7336,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7511,7 +7360,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7536,7 +7384,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7561,7 +7408,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7586,7 +7432,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7611,7 +7456,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7636,7 +7480,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7661,7 +7504,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher validated",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7686,7 +7528,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7711,7 +7552,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7736,7 +7576,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7761,7 +7600,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher validated",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7786,7 +7624,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7811,7 +7648,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7836,7 +7672,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7861,7 +7696,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7886,7 +7720,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7911,7 +7744,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7936,7 +7768,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7961,7 +7792,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -7986,7 +7816,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -8011,7 +7840,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -8036,7 +7864,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -8061,7 +7888,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher validated",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -8086,7 +7912,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -8111,7 +7936,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -8136,7 +7960,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -8161,7 +7984,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher validated",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -8186,7 +8008,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -8211,7 +8032,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -8236,7 +8056,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -8261,7 +8080,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -8286,7 +8104,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -8311,7 +8128,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -8336,7 +8152,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -8361,7 +8176,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -8386,7 +8200,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "tile (type unspecified)",
       "p9_evidence_raw": "C: açık çatı fotoğrafı",
       "p9_visibility": "observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -8411,7 +8224,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -8436,7 +8248,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher validated",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -8461,7 +8272,6 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher validated",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
     },
     {
@@ -8486,400 +8296,7 @@ window.ASCAAD26_EVIDENCE_DATA = {
       "p9_roof_material_limited": "",
       "p9_evidence_raw": "NA",
       "p9_visibility": "not observable",
-      "review_status": "researcher review required",
       "source_file": "Trabzon_Kultur_Varliklari_Envanteri_Trab.pdf"
-    }
-  ],
-  "researcherValidation": [
-    {
-      "sample_number": 1,
-      "record_id": "1 No.lu Kentsel Sit|K-03",
-      "area": "1 No.lu Kentsel Sit",
-      "source_pdf_page": 292,
-      "record_code": "K-03",
-      "inclusion_status": "included",
-      "selection_reason_raw": "seyrek P8 kategorisi; P1 NA kararı",
-      "researcher_p1": "NA",
-      "researcher_p8": "timber",
-      "validation_note": "Collective researcher confirmation (2026-08-12); not an independent blind recoding exercise.",
-      "validation_status": "completed"
-    },
-    {
-      "sample_number": 2,
-      "record_id": "1 No.lu Kentsel Sit|K-14",
-      "area": "1 No.lu Kentsel Sit",
-      "source_pdf_page": 300,
-      "record_code": "K-14",
-      "inclusion_status": "included",
-      "selection_reason_raw": "P1 NA kararı",
-      "researcher_p1": "NA",
-      "researcher_p8": "stone+timber+bagdadi",
-      "validation_note": "Collective researcher confirmation (2026-08-12); not an independent blind recoding exercise.",
-      "validation_status": "completed"
-    },
-    {
-      "sample_number": 3,
-      "record_id": "1 No.lu Kentsel Sit|K-18",
-      "area": "1 No.lu Kentsel Sit",
-      "source_pdf_page": 302,
-      "record_code": "K-18",
-      "inclusion_status": "included",
-      "selection_reason_raw": "alan içi oranlı temel seçim",
-      "researcher_p1": "3",
-      "researcher_p8": "stone+timber+bagdadi",
-      "validation_note": "Collective researcher confirmation (2026-08-12); not an independent blind recoding exercise.",
-      "validation_status": "completed"
-    },
-    {
-      "sample_number": 4,
-      "record_id": "1 No.lu Kentsel Sit|K-24",
-      "area": "1 No.lu Kentsel Sit",
-      "source_pdf_page": 305,
-      "record_code": "K-24",
-      "inclusion_status": "included",
-      "selection_reason_raw": "alan içi oranlı temel seçim",
-      "researcher_p1": "2",
-      "researcher_p8": "stone/masonry",
-      "validation_note": "Collective researcher confirmation (2026-08-12); not an independent blind recoding exercise.",
-      "validation_status": "completed"
-    },
-    {
-      "sample_number": 5,
-      "record_id": "2 No.lu Kentsel Sit|K-09",
-      "area": "2 No.lu Kentsel Sit",
-      "source_pdf_page": 313,
-      "record_code": "K-09",
-      "inclusion_status": "included",
-      "selection_reason_raw": "P1 NA kararı",
-      "researcher_p1": "NA",
-      "researcher_p8": "stone+timber+bagdadi",
-      "validation_note": "Collective researcher confirmation (2026-08-12); not an independent blind recoding exercise.",
-      "validation_status": "completed"
-    },
-    {
-      "sample_number": 6,
-      "record_id": "2 No.lu Kentsel Sit|K-10",
-      "area": "2 No.lu Kentsel Sit",
-      "source_pdf_page": 314,
-      "record_code": "K-10",
-      "inclusion_status": "included",
-      "selection_reason_raw": "P1 NA kararı",
-      "researcher_p1": "NA",
-      "researcher_p8": "stone+timber+bagdadi",
-      "validation_note": "Collective researcher confirmation (2026-08-12); not an independent blind recoding exercise.",
-      "validation_status": "completed"
-    },
-    {
-      "sample_number": 7,
-      "record_id": "2 No.lu Kentsel Sit|K-16",
-      "area": "2 No.lu Kentsel Sit",
-      "source_pdf_page": 319,
-      "record_code": "K-16",
-      "inclusion_status": "included",
-      "selection_reason_raw": "seyrek P1 değeri; ikinci turda P1 değişti",
-      "researcher_p1": "4",
-      "researcher_p8": "stone/masonry",
-      "validation_note": "Collective researcher confirmation (2026-08-12); not an independent blind recoding exercise.",
-      "validation_status": "completed"
-    },
-    {
-      "sample_number": 8,
-      "record_id": "2 No.lu Kentsel Sit|K-35",
-      "area": "2 No.lu Kentsel Sit",
-      "source_pdf_page": 334,
-      "record_code": "K-35",
-      "inclusion_status": "included",
-      "selection_reason_raw": "alan içi oranlı temel seçim",
-      "researcher_p1": "3",
-      "researcher_p8": "stone/masonry",
-      "validation_note": "Collective researcher confirmation (2026-08-12); not an independent blind recoding exercise.",
-      "validation_status": "completed"
-    },
-    {
-      "sample_number": 9,
-      "record_id": "2 No.lu Kentsel Sit|K-38",
-      "area": "2 No.lu Kentsel Sit",
-      "source_pdf_page": 336,
-      "record_code": "K-38",
-      "inclusion_status": "included",
-      "selection_reason_raw": "alan içi oranlı temel seçim",
-      "researcher_p1": "2",
-      "researcher_p8": "stone/masonry",
-      "validation_note": "Collective researcher confirmation (2026-08-12); not an independent blind recoding exercise.",
-      "validation_status": "completed"
-    },
-    {
-      "sample_number": 10,
-      "record_id": "2 No.lu Kentsel Sit|K-44",
-      "area": "2 No.lu Kentsel Sit",
-      "source_pdf_page": 340,
-      "record_code": "K-44",
-      "inclusion_status": "included",
-      "selection_reason_raw": "alan içi oranlı temel seçim",
-      "researcher_p1": "2",
-      "researcher_p8": "stone+timber+bagdadi",
-      "validation_note": "Collective researcher confirmation (2026-08-12); not an independent blind recoding exercise.",
-      "validation_status": "completed"
-    },
-    {
-      "sample_number": 11,
-      "record_id": "2 No.lu Kentsel Sit|K-57",
-      "area": "2 No.lu Kentsel Sit",
-      "source_pdf_page": 346,
-      "record_code": "K-57",
-      "inclusion_status": "included",
-      "selection_reason_raw": "alan içi oranlı temel seçim",
-      "researcher_p1": "2",
-      "researcher_p8": "stone/masonry",
-      "validation_note": "Collective researcher confirmation (2026-08-12); not an independent blind recoding exercise.",
-      "validation_status": "completed"
-    },
-    {
-      "sample_number": 12,
-      "record_id": "2 No.lu Kentsel Sit|K-58",
-      "area": "2 No.lu Kentsel Sit",
-      "source_pdf_page": 347,
-      "record_code": "K-58",
-      "inclusion_status": "included",
-      "selection_reason_raw": "ikinci turda P1 değişti",
-      "researcher_p1": "3",
-      "researcher_p8": "stone+timber+bagdadi",
-      "validation_note": "Collective researcher confirmation (2026-08-12); not an independent blind recoding exercise.",
-      "validation_status": "completed"
-    },
-    {
-      "sample_number": 13,
-      "record_id": "3 No.lu Kentsel Sit|K-16",
-      "area": "3 No.lu Kentsel Sit",
-      "source_pdf_page": 356,
-      "record_code": "K-16",
-      "inclusion_status": "included",
-      "selection_reason_raw": "alan içi oranlı temel seçim",
-      "researcher_p1": "2",
-      "researcher_p8": "stone+timber+bagdadi",
-      "validation_note": "Collective researcher confirmation (2026-08-12); not an independent blind recoding exercise.",
-      "validation_status": "completed"
-    },
-    {
-      "sample_number": 14,
-      "record_id": "3 No.lu Kentsel Sit|I-33",
-      "area": "3 No.lu Kentsel Sit",
-      "source_pdf_page": 365,
-      "record_code": "I-33",
-      "inclusion_status": "partially included",
-      "selection_reason_raw": "kısmen uygun alt grup",
-      "researcher_p1": "3",
-      "researcher_p8": "stone/masonry",
-      "validation_note": "Collective researcher confirmation (2026-08-12); not an independent blind recoding exercise.",
-      "validation_status": "completed"
-    },
-    {
-      "sample_number": 15,
-      "record_id": "3 No.lu Kentsel Sit|I-37",
-      "area": "3 No.lu Kentsel Sit",
-      "source_pdf_page": 367,
-      "record_code": "I-37",
-      "inclusion_status": "partially included",
-      "selection_reason_raw": "kısmen uygun alt grup",
-      "researcher_p1": "2",
-      "researcher_p8": "stone/masonry",
-      "validation_note": "Collective researcher confirmation (2026-08-12); not an independent blind recoding exercise.",
-      "validation_status": "completed"
-    },
-    {
-      "sample_number": 16,
-      "record_id": "3 No.lu Kentsel Sit|I-38",
-      "area": "3 No.lu Kentsel Sit",
-      "source_pdf_page": 367,
-      "record_code": "I-38",
-      "inclusion_status": "partially included",
-      "selection_reason_raw": "seyrek P8 kategorisi; kısmen uygun alt grup",
-      "researcher_p1": "2",
-      "researcher_p8": "stone+brick",
-      "validation_note": "Collective researcher confirmation (2026-08-12); not an independent blind recoding exercise.",
-      "validation_status": "completed"
-    },
-    {
-      "sample_number": 17,
-      "record_id": "Pazarkapı|K-04",
-      "area": "Pazarkapı",
-      "source_pdf_page": 372,
-      "record_code": "K-04",
-      "inclusion_status": "partially included",
-      "selection_reason_raw": "seyrek P8 kategorisi; kısmen uygun alt grup",
-      "researcher_p1": "3",
-      "researcher_p8": "briquette/masonry",
-      "validation_note": "Collective researcher confirmation (2026-08-12); not an independent blind recoding exercise.",
-      "validation_status": "completed"
-    },
-    {
-      "sample_number": 18,
-      "record_id": "Pazarkapı|K-12",
-      "area": "Pazarkapı",
-      "source_pdf_page": 376,
-      "record_code": "K-12",
-      "inclusion_status": "included",
-      "selection_reason_raw": "alan içi oranlı temel seçim",
-      "researcher_p1": "2",
-      "researcher_p8": "stone+timber+bagdadi",
-      "validation_note": "Collective researcher confirmation (2026-08-12); not an independent blind recoding exercise.",
-      "validation_status": "completed"
-    },
-    {
-      "sample_number": 19,
-      "record_id": "Meydan ve Yakın Çevresi|I-01",
-      "area": "Meydan ve Yakın Çevresi",
-      "source_pdf_page": 403,
-      "record_code": "I-01",
-      "inclusion_status": "included",
-      "selection_reason_raw": "seyrek P1 değeri; ikinci turda P1 değişti",
-      "researcher_p1": "4",
-      "researcher_p8": "stone/masonry",
-      "validation_note": "Collective researcher confirmation (2026-08-12); not an independent blind recoding exercise.",
-      "validation_status": "completed"
-    },
-    {
-      "sample_number": 20,
-      "record_id": "Tekke-Gazipaşa-Boztepe|K-11",
-      "area": "Tekke-Gazipaşa-Boztepe",
-      "source_pdf_page": 414,
-      "record_code": "K-11",
-      "inclusion_status": "included",
-      "selection_reason_raw": "alan içi oranlı temel seçim",
-      "researcher_p1": "3",
-      "researcher_p8": "stone+timber+bagdadi",
-      "validation_note": "Collective researcher confirmation (2026-08-12); not an independent blind recoding exercise.",
-      "validation_status": "completed"
-    },
-    {
-      "sample_number": 21,
-      "record_id": "Tekke-Gazipaşa-Boztepe|K-18",
-      "area": "Tekke-Gazipaşa-Boztepe",
-      "source_pdf_page": 417,
-      "record_code": "K-18",
-      "inclusion_status": "included",
-      "selection_reason_raw": "P1 uç değeri",
-      "researcher_p1": "1",
-      "researcher_p8": "stone+timber+bagdadi",
-      "validation_note": "Collective researcher confirmation (2026-08-12); not an independent blind recoding exercise.",
-      "validation_status": "completed"
-    },
-    {
-      "sample_number": 22,
-      "record_id": "Tekke-Gazipaşa-Boztepe|K-22",
-      "area": "Tekke-Gazipaşa-Boztepe",
-      "source_pdf_page": 419,
-      "record_code": "K-22",
-      "inclusion_status": "included",
-      "selection_reason_raw": "P1 uç değeri; ikinci turda P1 değişti",
-      "researcher_p1": "5",
-      "researcher_p8": "stone/masonry",
-      "validation_note": "Collective researcher confirmation (2026-08-12); not an independent blind recoding exercise.",
-      "validation_status": "completed"
-    },
-    {
-      "sample_number": 23,
-      "record_id": "Tekke-Gazipaşa-Boztepe|K-25",
-      "area": "Tekke-Gazipaşa-Boztepe",
-      "source_pdf_page": 421,
-      "record_code": "K-25",
-      "inclusion_status": "included",
-      "selection_reason_raw": "ikinci turda P1 değişti",
-      "researcher_p1": "3",
-      "researcher_p8": "stone/masonry",
-      "validation_note": "Collective researcher confirmation (2026-08-12); not an independent blind recoding exercise.",
-      "validation_status": "completed"
-    },
-    {
-      "sample_number": 24,
-      "record_id": "Cumhuriyet|K-01",
-      "area": "Cumhuriyet",
-      "source_pdf_page": 423,
-      "record_code": "K-01",
-      "inclusion_status": "partially included",
-      "selection_reason_raw": "kısmen uygun alt grup",
-      "researcher_p1": "3",
-      "researcher_p8": "stone/masonry",
-      "validation_note": "Collective researcher confirmation (2026-08-12); not an independent blind recoding exercise.",
-      "validation_status": "completed"
-    },
-    {
-      "sample_number": 25,
-      "record_id": "Cumhuriyet|K-16",
-      "area": "Cumhuriyet",
-      "source_pdf_page": 430,
-      "record_code": "K-16",
-      "inclusion_status": "partially included",
-      "selection_reason_raw": "kısmen uygun alt grup",
-      "researcher_p1": "2",
-      "researcher_p8": "stone/masonry",
-      "validation_note": "Collective researcher confirmation (2026-08-12); not an independent blind recoding exercise.",
-      "validation_status": "completed"
-    },
-    {
-      "sample_number": 26,
-      "record_id": "Çömlekçi|K-02",
-      "area": "Çömlekçi",
-      "source_pdf_page": 433,
-      "record_code": "K-02",
-      "inclusion_status": "included",
-      "selection_reason_raw": "seyrek P8 kategorisi; ikinci turda P1 değişti",
-      "researcher_p1": "3",
-      "researcher_p8": "stone+timber",
-      "validation_note": "Collective researcher confirmation (2026-08-12); not an independent blind recoding exercise.",
-      "validation_status": "completed"
-    },
-    {
-      "sample_number": 27,
-      "record_id": "Çömlekçi|K-14",
-      "area": "Çömlekçi",
-      "source_pdf_page": 439,
-      "record_code": "K-14",
-      "inclusion_status": "included",
-      "selection_reason_raw": "seyrek P8 kategorisi",
-      "researcher_p1": "3",
-      "researcher_p8": "stone+timber+brick",
-      "validation_note": "Collective researcher confirmation (2026-08-12); not an independent blind recoding exercise.",
-      "validation_status": "completed"
-    },
-    {
-      "sample_number": 28,
-      "record_id": "Çömlekçi|K-18",
-      "area": "Çömlekçi",
-      "source_pdf_page": 441,
-      "record_code": "K-18",
-      "inclusion_status": "included",
-      "selection_reason_raw": "ikinci turda P1 değişti",
-      "researcher_p1": "2",
-      "researcher_p8": "stone+timber+bagdadi",
-      "validation_note": "Collective researcher confirmation (2026-08-12); not an independent blind recoding exercise.",
-      "validation_status": "completed"
-    },
-    {
-      "sample_number": 29,
-      "record_id": "Çömlekçi|K-29",
-      "area": "Çömlekçi",
-      "source_pdf_page": 447,
-      "record_code": "K-29",
-      "inclusion_status": "included",
-      "selection_reason_raw": "seyrek P8 kategorisi",
-      "researcher_p1": "2",
-      "researcher_p8": "stone+timber",
-      "validation_note": "Collective researcher confirmation (2026-08-12); not an independent blind recoding exercise.",
-      "validation_status": "completed"
-    },
-    {
-      "sample_number": 30,
-      "record_id": "Çömlekçi|K-30",
-      "area": "Çömlekçi",
-      "source_pdf_page": 447,
-      "record_code": "K-30",
-      "inclusion_status": "included",
-      "selection_reason_raw": "seyrek P8 kategorisi",
-      "researcher_p1": "3",
-      "researcher_p8": "stone+timber+brick",
-      "validation_note": "Collective researcher confirmation (2026-08-12); not an independent blind recoding exercise.",
-      "validation_status": "completed"
     }
   ]
 };

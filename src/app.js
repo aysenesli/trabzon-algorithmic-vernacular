@@ -2,7 +2,7 @@
 
 /* ════════════════════════════════════════════════════════════════════════
    TRABZON VERNACULAR INVENTORY INTERFACE
-   src/app.js · v1.2.0 · Documented Cases Build
+   src/app.js · v1.5.0 · Photo-free Inventory Build
 
    Authoritative source order:
      1. 02_SCIENTIFIC_PRODUCT_SPEC_EN.md
@@ -11,7 +11,7 @@
      4. 03_ACCEPTANCE_TESTS_EN.md
 
    All data read from window.ASCAAD26_EVIDENCE_DATA via
-   data/ascaad26-evidence-data.js (unmodified copy).
+   data/ascaad26-evidence-data.js (photo-free publication copy).
 
    No fetch(), XHR, WebSocket, external library, or network request.
    No overall score, compatibility rating, AI confidence, or design
@@ -132,8 +132,7 @@ const state = {
     p1:           '',
     p8:           '',
     p9:           '',
-    construction: '',
-    review:       ''
+    construction: ''
   },
   visibleRecords: [],
   activeView:     'design',   // 'design' | 'evidence' | 'method'
@@ -153,7 +152,7 @@ let filterDebounce = null;
  * Checks are non-destructive cross-validations; they never override
  * the authoritative aggregate values.
  */
-function runIntegrityChecks(cs, ar, rv, agg, val) {
+function runIntegrityChecks(cs, ar, agg) {
   const failures = [];
 
   function check(label, expected, actual) {
@@ -178,9 +177,6 @@ function runIntegrityChecks(cs, ar, rv, agg, val) {
   check('analysisRecords partially included', 37, ar.filter(r => r.inclusion_status === 'partially included').length);
   check('analysisRecords excluded (must be 0)', 0, ar.filter(r => r.inclusion_status === 'excluded').length);
 
-  // researcherValidation
-  check('researcherValidation.length', 30, rv.length);
-
   // P1 observable counts
   const p1Observable = ar.filter(r => Number.isInteger(r.p1_visible_floor_count));
   check('P1 observable count', 160, p1Observable.length);
@@ -203,14 +199,6 @@ function runIntegrityChecks(cs, ar, rv, agg, val) {
   const p9Observable = ar.filter(r => !(r.p9_roof_material_limited == null || r.p9_roof_material_limited === ''));
   check('P9 observable count', 53, p9Observable.length);
   check('P9 unavailable count (empty string)', 130, ar.filter(r => (r.p9_roof_material_limited == null || r.p9_roof_material_limited === '')).length);
-
-  // Review status counts
-  check('researcher validated rows', 30, ar.filter(r => r.review_status === 'researcher validated').length);
-  check('researcher review required rows', 153, ar.filter(r => r.review_status === 'researcher review required').length);
-
-  // validation fields
-  check('validation.researcherValidatedRowsInFullDataset', 30, val.researcherValidatedRowsInFullDataset);
-  check('validation.remainingRowsRequiringResearcherReview', 153, val.remainingRowsRequiringResearcherReview);
 
   // Unique record IDs
   const ids = ar.map(r => r.record_id);
@@ -1153,121 +1141,6 @@ function materialLabel(key) {
   return P8_LABELS[key] || key || 'Unavailable';
 }
 
-function ensureCaseDialog() {
-  let dialog = document.getElementById('case-source-dialog');
-  if (dialog) return dialog;
-  dialog = document.createElement('dialog');
-  dialog.id = 'case-source-dialog';
-  dialog.className = 'case-source-dialog';
-  dialog.innerHTML = `
-    <div class="case-dialog-header">
-      <h2 id="case-dialog-title">Source record</h2>
-      <button type="button" class="detail-close-btn" aria-label="Close source record">✕</button>
-    </div>
-    <div id="case-dialog-content"></div>`;
-  document.body.appendChild(dialog);
-  dialog.querySelector('.detail-close-btn').addEventListener('click', () => dialog.close());
-  dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
-  return dialog;
-}
-
-function renderDocumentedCases() {
-  const allCases = Array.isArray(window.TRABZON_DOCUMENTED_CASES) ? window.TRABZON_DOCUMENTED_CASES : [];
-  const grid = document.querySelector('.case-grid');
-  if (!grid) return;
-
-  const areaSelect = document.getElementById('case-filter-area');
-  const p1Select = document.getElementById('case-filter-p1');
-  const p8Select = document.getElementById('case-filter-p8');
-  const p9Select = document.getElementById('case-filter-p9');
-  const count = document.getElementById('case-result-count');
-  const clear = document.getElementById('case-filter-clear');
-  const unique = (values) => [...new Set(values)].sort((a,b) => String(a).localeCompare(String(b), 'en'));
-
-  unique(allCases.map(item => item.area)).forEach(value => {
-    areaSelect?.insertAdjacentHTML('beforeend', `<option value="${escHtml(value)}">${escHtml(value)}</option>`);
-  });
-  unique(allCases.map(item => item.p8)).forEach(value => {
-    p8Select?.insertAdjacentHTML('beforeend', `<option value="${escHtml(value)}">${escHtml(materialLabel(value))}</option>`);
-  });
-
-  const update = () => {
-    const area = areaSelect?.value || '';
-    const p1 = p1Select?.value || '';
-    const p8 = p8Select?.value || '';
-    const p9 = p9Select?.value || '';
-    const filtered = allCases.filter(item => {
-      const itemP1 = item.p1 == null ? 'unavailable' : String(item.p1);
-      return (!area || item.area === area) && (!p1 || itemP1 === p1) &&
-             (!p8 || item.p8 === p8) && (!p9 || item.p9Visibility === p9);
-    });
-    if (count) count.textContent = `${filtered.length} of ${allCases.length} researcher-reviewed documented cases shown.`;
-    grid.innerHTML = filtered.map(item => {
-      const p1Text = item.p1 == null ? 'Unavailable in source' : `${item.p1} visible floor${item.p1 === 1 ? '' : 's'}`;
-      const p9Text = item.p9 || 'Unavailable in source';
-      return `<article class="case-card" data-record-id="${escHtml(item.recordId)}">
-        <button type="button" class="case-image-button" data-action="source" aria-label="View source record ${escHtml(item.recordId)}">
-          <img src="${escHtml(item.image)}" alt="Source inventory record ${escHtml(item.recordCode)} in ${escHtml(item.area)}" loading="lazy">
-          <span>View source record</span>
-        </button>
-        <div class="case-card__body">
-          <h3>${escHtml(item.recordCode)} · ${escHtml(item.area)}</h3>
-          <p class="case-source">Working PDF page ${item.sourcePdfPage} · Reviewed record ${item.sampleNumber}/30</p>
-          <dl>
-            <div><dt>P1</dt><dd>${escHtml(p1Text)}</dd></div>
-            <div><dt>P8</dt><dd>${escHtml(materialLabel(item.p8))}</dd></div>
-            <div><dt>P9</dt><dd>${escHtml(p9Text)}</dd></div>
-          </dl>
-          <p class="case-status">Researcher-reviewed</p>
-          <p class="case-evidence-note">P1 and P8 collective confirmation; P9 shown only where observable.</p>
-          <button type="button" class="btn btn--secondary case-load" data-action="load">View coded attributes</button>
-        </div>
-      </article>`;
-    }).join('') || '<p class="case-empty">No documented cases match these filters.</p>';
-  };
-
-  [areaSelect,p1Select,p8Select,p9Select].forEach(el => el?.addEventListener('change', update));
-  clear?.addEventListener('click', () => {
-    [areaSelect,p1Select,p8Select,p9Select].forEach(el => { if (el) el.value = ''; });
-    update();
-  });
-  grid.addEventListener('click', event => {
-    const card = event.target.closest('.case-card');
-    const action = event.target.closest('[data-action]')?.dataset.action;
-    if (!card || !action) return;
-    const item = allCases.find(entry => entry.recordId === card.dataset.recordId);
-    if (!item) return;
-    if (action === 'source') {
-      const dialog = ensureCaseDialog();
-      dialog.querySelector('#case-dialog-title').textContent = `${item.recordCode} · ${item.area}`;
-      dialog.querySelector('#case-dialog-content').innerHTML = `
-        <img src="${escHtml(item.image)}" alt="Source inventory record ${escHtml(item.recordId)}">
-        <p><strong>Source:</strong> ${escHtml(item.sourceLabel)}</p>
-        <p><strong>Location in working digital PDF:</strong> page ${item.sourcePdfPage}. This is not the printed page number.</p>
-        <p><strong>Interpretation boundary:</strong> The source image documents the inventory record. The interface representation is schematic and is not a measured reconstruction.</p>`;
-      dialog.showModal();
-      return;
-    }
-    if (item.p1 != null) state.params.P1 = item.p1;
-    state.params.P8 = item.p8;
-    state.params.P9 = item.p9 || '';
-    syncFormToState(); updateP1Trace(); updateP8Trace(); populateP9Trace();
-    updateConfigSummary(); scheduleSchematicUpdate();
-    const loaded = [item.p1 == null ? null : 'P1', 'P8', item.p9 ? 'P9' : null].filter(Boolean).join(', ');
-    setInputFeedback({
-      kind: 'evidence', label: 'Documented record attributes loaded',
-      message: `Applied ${loaded} from ${item.recordId}. Unavailable attributes were not inferred. P2–P7 and P10–P12 remain neutral visualization-only values and are not measurements of this building.`
-    });
-    document.getElementById('tab-design')?.click();
-    document.getElementById('p1-block')?.scrollIntoView({ block: 'start' });
-  });
-  update();
-}
-
-function wireDocumentedCases() {
-  renderDocumentedCases();
-}
-
 /** Sync all form controls to current state.params */
 function syncFormToState() {
   const p = state.params;
@@ -1325,7 +1198,6 @@ function filterRecords() {
     }
 
     if (f.construction && r.construction_system_normalized !== f.construction) return false;
-    if (f.review && r.review_status !== f.review) return false;
 
     return true;
   });
@@ -1364,8 +1236,6 @@ function renderTable() {
   tbody.innerHTML = records.map((r, idx) => {
     const incClass  = r.inclusion_status === 'included'  ? 'status-included' :
                       r.inclusion_status === 'partially included' ? 'status-partial' : '';
-    const revClass  = r.review_status === 'researcher validated' ? 'status-validated' : 'status-review';
-    const revLabel  = r.review_status === 'researcher validated' ? '✓ Researcher-reviewed' : 'Review required';
 
     return `<tr>
       <td class="cell-id">${escHtml(r.record_id)}</td>
@@ -1376,7 +1246,6 @@ function renderTable() {
       <td>${escHtml(r.p8_material_category)}</td>
       <td>${p9CellFn(r)}</td>
       <td>${escHtml(r.construction_system_normalized)}</td>
-      <td class="${revClass}">${revLabel}</td>
       <td><button type="button" class="btn-detail" data-idx="${idx}" aria-label="Open details for record ${escHtml(r.record_id)}">Details</button></td>
     </tr>`;
   }).join('');
@@ -1466,7 +1335,7 @@ function wireExplorerFilters() {
     'filter-p8':          'p8',
     'filter-p9':          'p9',
     'filter-construction':'construction',
-    'filter-review':      'review'
+
   };
 
   for (const [id, key] of Object.entries(filterIds)) {
@@ -1514,9 +1383,6 @@ function openRecordDetail(rec) {
   const p1Display   = rec.p1_visible_floor_count === null ? 'Unavailable' : String(rec.p1_visible_floor_count);
   const p9Unavailable = rec.p9_roof_material_limited == null || rec.p9_roof_material_limited === '';
   const p9Display   = p9Unavailable ? 'Unavailable (limited evidence)' : rec.p9_roof_material_limited;
-  const revLabel    = rec.review_status === 'researcher validated'
-                        ? '✓ Researcher-reviewed (joint review, 2026-08-12)'
-                        : 'Researcher review required';
 
   const field = (title, value, cls = '', wide = false) =>
     `<div class="detail-section${wide ? '' : ' detail-section--half'}">
@@ -1531,7 +1397,6 @@ function openRecordDetail(rec) {
     ${field('Area',               rec.area)}
     ${field('PDF Page',           rec.source_pdf_page)}
     ${field('Inclusion Status',   rec.inclusion_status)}
-    ${field('Review Status',      revLabel)}
     ${field('P1 — Visible Floor Count', p1Display)}
     ${field('P8 — Facade Category',     P8_LABELS[rec.p8_material_category] || rec.p8_material_category)}
     ${field('P9 — Roof Material (limited evidence)', p9Display)}
@@ -1609,7 +1474,7 @@ function exportFilteredCSV() {
   const headers = [
     'record_id','area','source_pdf_page','record_code','inclusion_status',
     'p1_visible_floor_count','p8_material_category','p9_roof_material_limited',
-    'p9_visibility','construction_system_normalized','review_status',
+    'p9_visibility','construction_system_normalized',
     'building_type_raw','period_raw','construction_technique_raw','material_raw',
     'original_function_raw','current_function_raw',
     'p1_evidence_raw','p8_evidence_raw','p9_evidence_raw','source_file'
@@ -1642,7 +1507,6 @@ function exportFilteredCSV() {
 function buildMethodContent() {
   const agg  = DB.aggregates;
   const rel  = agg.p1P8RelationshipTest;
-  const val  = DB.validation;
   const meta = DB.metadata;
   const el   = document.getElementById('method-content');
   if (!el) return;
@@ -1674,7 +1538,7 @@ function buildMethodContent() {
 
     <div class="method-section">
       <h3>2. Initial Data Structuring</h3>
-      <p><strong>Method flow:</strong> inventory sheets → assisted initial structuring → scope screening → P1 visual audit → 30-record collective confirmation → descriptive evidence interface.</p>
+      <p><strong>Method flow:</strong> inventory records → data structuring and scope screening → architectural parameter definition → interactive representation.</p>
       <p>A vision-language model assisted the preliminary transfer of visual and textual information into a common data structure. The current browser interface performs no AI inference. The available study documentation does not report the model version, prompts, or inference settings, and no systematic model-accuracy evaluation was conducted. The AI-assisted step is therefore not presented as a validated methodological contribution.</p>
     </div>
 
@@ -1702,12 +1566,9 @@ function buildMethodContent() {
     </div>
 
     <div class="method-section">
-      <h3>5. Researcher Collective Confirmation</h3>
-      <div class="limitation-callout">
-        The researcher collectively reviewed the existing P1 states and P8 codes in the selected 30-record sample. Four P1 states remain unavailable. The review was not an independent blind recoding exercise; therefore, it must not be interpreted as inter-rater reliability, model accuracy, or a guarantee for all 183 records.
-      </div>
-      <p>The researcher collectively confirmed the existing P1 states and P8 codes in the selected 30-record sample on ${val.date}. Four sampled records retain an unavailable P1 state because visible floor count could not be confirmed; no value was inferred for them. The confirmation exercise reported no required corrections. It was not independent blind recoding and does not provide a model-accuracy or inter-rater reliability estimate.</p>
-      <p>The 30-record confirmation covered ${val.researcherValidatedRowsInFullDataset} of the 183 analysis records. The remaining ${val.remainingRowsRequiringResearcherReview} records have the status "researcher review required" and are individually identifiable in the Evidence Explorer.</p>
+      <h3>5. Data Availability and Source Traceability</h3>
+      <p>Each record retains its inventory code, area, working-PDF page location and coded architectural attributes. These identifiers allow the source to be consulted in the original publication. This release does not reproduce inventory photographs or present a separate case gallery.</p>
+      <p>Field availability and independent verification are different conditions. The distributions describe the coding available in this dataset; they do not establish model accuracy, inter-rater agreement or complete verification of all records. Missing attributes remain unavailable.</p>
     </div>
 
     <div class="method-section">
@@ -1733,12 +1594,12 @@ function buildMethodContent() {
     <div class="method-section">
       <h3>7. Methodological Boundaries</h3>
       <p><strong>This interface is not a shape grammar.</strong> It does not derive dynamic part relations or production rules. It uses a fixed attribute schema and schematic controls to display selected inventory information.</p>
-      <p>The interface organizes 183 records, distinguishes evidence conditions, and links the complete 30-record researcher-reviewed subset to source images. It does not generate design rules, perform live AI inference, reconstruct measured buildings, assess regional authenticity, calculate compatibility or confidence scores, or evaluate architectural quality.</p>
+      <p>The interface organizes 183 records and relates coded attributes to inventory identifiers and source page locations. Source photographs are not displayed or bundled. It does not generate design rules, perform live AI inference, reconstruct measured buildings, assess regional authenticity, calculate compatibility or confidence scores, or evaluate architectural quality.</p>
       <p>No user study was conducted. The prototype has not been evaluated for usability, improvement in user understanding, heritage decision support, or effects on design reasoning. Functional checks establish software operation only.</p>
     </div>
 
     <div class="method-section">
-      <h3>7. Statistical Tests and Rejected Relationships</h3>
+      <h3>8. Statistical Tests and Rejected Relationships</h3>
       <h4>P1 × P8 association test (rejected)</h4>
       <p>An exploratory chi-square test of association between P1 and P8 was conducted, restricted to the two dominant P1 groups (P1 = 2: 70 records; P1 = 3: 78 records; N = 148 total) with grouped P8 categories. P8 is available for all 183 records; this restriction reflects the test design, not missing data.</p>
       <div class="stat-box">
@@ -1755,7 +1616,7 @@ function buildMethodContent() {
     </div>
 
     <div class="method-section">
-      <h3>8. Why No Overall Score or AI Confidence</h3>
+      <h3>9. Why No Overall Score or AI Confidence</h3>
       <p>No metric with a sound scientific basis for combining these parameters into an overall compatibility, vernacularity, or authenticity score was found. Specifically:</p>
       <ul>
         <li>P1 and P8 provide descriptive frequency distributions, not design targets or benchmarks.</li>
@@ -1768,14 +1629,13 @@ function buildMethodContent() {
     </div>
 
     <div class="method-section">
-      <h3>9. Source Attribution</h3>
+      <h3>10. Source Attribution</h3>
       <p>
         <strong>Inventory:</strong> Trabzon Kent İçi Kültür Varlıkları Envanteri (Özen et al., 2010), pages 291–448.<br>
         <strong>Dataset version:</strong> ${meta.datasetVersion}<br>
-        <strong>Source PDF:</strong> ${meta.sourceFile}<br>
-        <strong>Researcher confirmation date:</strong> ${val.date}
+        <strong>Source PDF identifier:</strong> ${meta.sourceFile}
       </p>
-      <p>The interface, dataset, and methodology are described in: <em>From Inventory to Interface: A Provenance-Aware Representation of Trabzon Vernacular Houses</em> (v1.2.0 – Documented Cases Build).</p>
+      <p>The interface, dataset, and methodology are described in: <em>From Inventory to Interface: A Provenance-Aware Representation of Trabzon Vernacular Houses</em> (v1.5.0 – Photo-free Inventory Build).</p>
     </div>
   `;
 }
@@ -1900,9 +1760,7 @@ document.addEventListener('DOMContentLoaded', function init() {
   const checks = runIntegrityChecks(
     DB.candidateScope,
     DB.analysisRecords,
-    DB.researcherValidation,
-    DB.aggregates,
-    DB.validation
+    DB.aggregates
   );
 
   if (!checks.passed) {
@@ -1933,7 +1791,6 @@ document.addEventListener('DOMContentLoaded', function init() {
   // 7. Wire all events
   setupMainTabs();
   wireDesignExplorerEvents();
-  wireDocumentedCases();
   wireExplorerFilters();
   wireRecordDialog();
 
